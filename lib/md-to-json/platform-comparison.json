@@ -1,0 +1,1930 @@
+{
+	"label": "Platformvergleich",
+	"criteria": [
+		{
+			"label": "1_Platformvergleich",
+			"criteriaElements": [
+				{
+					"label": "Java",
+					"criterium": "Programmiersprache",
+					"elemValue": 83.12354039696264
+				},
+				{
+					"label": "Java",
+					"criterium": "Programmierumgebung",
+					"elemValue": 71.2919602482764
+				},
+				{
+					"label": "Java",
+					"criterium": "Business-Context",
+					"elemValue": 89.98701298701299
+				},
+				{
+					"label": "Java",
+					"criterium": "Hardware-context",
+					"elemValue": 100.0
+				},
+				{
+					"label": "Java",
+					"criterium": "Laufzeitverhalten",
+					"elemValue": 68.66984953703704
+				},
+				{
+					"label": "Java",
+					"criterium": "Community",
+					"elemValue": 69.375
+				},
+				{
+					"label": "Java",
+					"criterium": "Lizenz",
+					"elemValue": 60.0
+				},
+				{
+					"label": "Go",
+					"criterium": "Programmiersprache",
+					"elemValue": 92.4753671247968
+				},
+				{
+					"label": "Go",
+					"criterium": "Programmierumgebung",
+					"elemValue": 91.20800864367463
+				},
+				{
+					"label": "Go",
+					"criterium": "Business-Context",
+					"elemValue": 100.0
+				},
+				{
+					"label": "Go",
+					"criterium": "Hardware-context",
+					"elemValue": 100.0
+				},
+				{
+					"label": "Go",
+					"criterium": "Laufzeitverhalten",
+					"elemValue": 95.41666666666666
+				},
+				{
+					"label": "Go",
+					"criterium": "Community",
+					"elemValue": 63.25
+				},
+				{
+					"label": "Go",
+					"criterium": "Lizenz",
+					"elemValue": 100.0
+				},
+				{
+					"label": "Rust",
+					"criterium": "Programmiersprache",
+					"elemValue": 91.1331523801422
+				},
+				{
+					"label": "Rust",
+					"criterium": "Programmierumgebung",
+					"elemValue": 93.41713536521964
+				},
+				{
+					"label": "Rust",
+					"criterium": "Business-Context",
+					"elemValue": 100.0
+				},
+				{
+					"label": "Rust",
+					"criterium": "Hardware-context",
+					"elemValue": 100.0
+				},
+				{
+					"label": "Rust",
+					"criterium": "Laufzeitverhalten",
+					"elemValue": 95.53674768518518
+				},
+				{
+					"label": "Rust",
+					"criterium": "Community",
+					"elemValue": 76.9375
+				},
+				{
+					"label": "Rust",
+					"criterium": "Lizenz",
+					"elemValue": 100.0
+				},
+				{
+					"label": "C++",
+					"criterium": "Programmiersprache",
+					"elemValue": 89.75730659095782
+				},
+				{
+					"label": "C++",
+					"criterium": "Programmierumgebung",
+					"elemValue": 46.21527642069416
+				},
+				{
+					"label": "C++",
+					"criterium": "Business-Context",
+					"elemValue": 73.35064935064935
+				},
+				{
+					"label": "C++",
+					"criterium": "Hardware-context",
+					"elemValue": 100.0
+				},
+				{
+					"label": "C++",
+					"criterium": "Laufzeitverhalten",
+					"elemValue": 82.20341435185185
+				},
+				{
+					"label": "C++",
+					"criterium": "Community",
+					"elemValue": 82.875
+				},
+				{
+					"label": "C++",
+					"criterium": "Lizenz",
+					"elemValue": 100.0
+				},
+				{
+					"label": "Python",
+					"criterium": "Programmiersprache",
+					"elemValue": 70.5593593694107
+				},
+				{
+					"label": "Python",
+					"criterium": "Programmierumgebung",
+					"elemValue": 53.53280890667491
+				},
+				{
+					"label": "Python",
+					"criterium": "Business-Context",
+					"elemValue": 73.32467532467533
+				},
+				{
+					"label": "Python",
+					"criterium": "Hardware-context",
+					"elemValue": 100.0
+				},
+				{
+					"label": "Python",
+					"criterium": "Laufzeitverhalten",
+					"elemValue": 58.75289351851852
+				},
+				{
+					"label": "Python",
+					"criterium": "Community",
+					"elemValue": 96.9375
+				},
+				{
+					"label": "Python",
+					"criterium": "Lizenz",
+					"elemValue": 100.0
+				}
+			]
+		},
+		{
+			"label": "2_Programmiersprache",
+			"criteriaElements": [
+				{
+					"label": "Java",
+					"criterium": "Paradigmen",
+					"elemValue": 90.34069700363094
+				},
+				{
+					"label": "Java",
+					"criterium": "Exception Handling",
+					"elemValue": 100.0
+				},
+				{
+					"label": "Java",
+					"criterium": "Std & 3rd Party Lib",
+					"elemValue": 74.72671370204577
+				},
+				{
+					"label": "Java",
+					"criterium": "Modularisierung",
+					"elemValue": 100.0
+				},
+				{
+					"label": "Java",
+					"criterium": "Integration mit System Libs (C, C++)",
+					"elemValue": 70.0
+				},
+				{
+					"label": "Java",
+					"criterium": "Integration mit anderen Programiersprachen",
+					"elemValue": 50.0
+				},
+				{
+					"label": "Java",
+					"criterium": "Lernkurve",
+					"elemValue": 60.0
+				},
+				{
+					"label": "Go",
+					"criterium": "Paradigmen",
+					"elemValue": 67.19603651294582
+				},
+				{
+					"label": "Go",
+					"criterium": "Exception Handling",
+					"elemValue": 100.0
+				},
+				{
+					"label": "Go",
+					"criterium": "Std & 3rd Party Lib",
+					"elemValue": 82.64427537943396
+				},
+				{
+					"label": "Go",
+					"criterium": "Modularisierung",
+					"elemValue": 100.0
+				},
+				{
+					"label": "Go",
+					"criterium": "Integration mit System Libs (C, C++)",
+					"elemValue": 100.0
+				},
+				{
+					"label": "Go",
+					"criterium": "Integration mit anderen Programiersprachen",
+					"elemValue": 100.0
+				},
+				{
+					"label": "Go",
+					"criterium": "Lernkurve",
+					"elemValue": 100.0
+				},
+				{
+					"label": "Rust",
+					"criterium": "Paradigmen",
+					"elemValue": 90.34069700363094
+				},
+				{
+					"label": "Rust",
+					"criterium": "Exception Handling",
+					"elemValue": 100.0
+				},
+				{
+					"label": "Rust",
+					"criterium": "Std & 3rd Party Lib",
+					"elemValue": 82.64427537943396
+				},
+				{
+					"label": "Rust",
+					"criterium": "Modularisierung",
+					"elemValue": 100.0
+				},
+				{
+					"label": "Rust",
+					"criterium": "Integration mit System Libs (C, C++)",
+					"elemValue": 100.0
+				},
+				{
+					"label": "Rust",
+					"criterium": "Integration mit anderen Programiersprachen",
+					"elemValue": 100.0
+				},
+				{
+					"label": "Rust",
+					"criterium": "Lernkurve",
+					"elemValue": 30.0
+				},
+				{
+					"label": "C++",
+					"criterium": "Paradigmen",
+					"elemValue": 92.27255760290475
+				},
+				{
+					"label": "C++",
+					"criterium": "Exception Handling",
+					"elemValue": 100.0
+				},
+				{
+					"label": "C++",
+					"criterium": "Std & 3rd Party Lib",
+					"elemValue": 77.96860912339362
+				},
+				{
+					"label": "C++",
+					"criterium": "Modularisierung",
+					"elemValue": 100.0
+				},
+				{
+					"label": "C++",
+					"criterium": "Integration mit System Libs (C, C++)",
+					"elemValue": 100.0
+				},
+				{
+					"label": "C++",
+					"criterium": "Integration mit anderen Programiersprachen",
+					"elemValue": 100.0
+				},
+				{
+					"label": "C++",
+					"criterium": "Lernkurve",
+					"elemValue": 20.0
+				},
+				{
+					"label": "Python",
+					"criterium": "Paradigmen",
+					"elemValue": 63.332315314398194
+				},
+				{
+					"label": "Python",
+					"criterium": "Exception Handling",
+					"elemValue": 100.0
+				},
+				{
+					"label": "Python",
+					"criterium": "Std & 3rd Party Lib",
+					"elemValue": 77.96860912339362
+				},
+				{
+					"label": "Python",
+					"criterium": "Modularisierung",
+					"elemValue": 70.0
+				},
+				{
+					"label": "Python",
+					"criterium": "Integration mit System Libs (C, C++)",
+					"elemValue": 80.0
+				},
+				{
+					"label": "Python",
+					"criterium": "Integration mit anderen Programiersprachen",
+					"elemValue": 0.0
+				},
+				{
+					"label": "Python",
+					"criterium": "Lernkurve",
+					"elemValue": 50.0
+				}
+			]
+		},
+		{
+			"label": "2_1_Paradigmen",
+			"criteriaElements": [
+				{
+					"label": "Java",
+					"criterium": "Prozedural",
+					"elemValue": 100.0
+				},
+				{
+					"label": "Java",
+					"criterium": "Funktional",
+					"elemValue": 50.0
+				},
+				{
+					"label": "Java",
+					"criterium": "Objekt Orientiert",
+					"elemValue": 100.0
+				},
+				{
+					"label": "Go",
+					"criterium": "Prozedural",
+					"elemValue": 100.0
+				},
+				{
+					"label": "Go",
+					"criterium": "Funktional",
+					"elemValue": 80.0
+				},
+				{
+					"label": "Go",
+					"criterium": "Objekt Orientiert",
+					"elemValue": 60.0
+				},
+				{
+					"label": "Rust",
+					"criterium": "Prozedural",
+					"elemValue": 100.0
+				},
+				{
+					"label": "Rust",
+					"criterium": "Funktional",
+					"elemValue": 50.0
+				},
+				{
+					"label": "Rust",
+					"criterium": "Objekt Orientiert",
+					"elemValue": 100.0
+				},
+				{
+					"label": "C++",
+					"criterium": "Prozedural",
+					"elemValue": 100.0
+				},
+				{
+					"label": "C++",
+					"criterium": "Funktional",
+					"elemValue": 60.0
+				},
+				{
+					"label": "C++",
+					"criterium": "Objekt Orientiert",
+					"elemValue": 100.0
+				},
+				{
+					"label": "Python",
+					"criterium": "Prozedural",
+					"elemValue": 100.0
+				},
+				{
+					"label": "Python",
+					"criterium": "Funktional",
+					"elemValue": 60.0
+				},
+				{
+					"label": "Python",
+					"criterium": "Objekt Orientiert",
+					"elemValue": 60.0
+				}
+			]
+		},
+		{
+			"label": "2_2_StdLib",
+			"criteriaElements": [
+				{
+					"label": "Java",
+					"criterium": "Treiber",
+					"elemValue": 100.0
+				},
+				{
+					"label": "Java",
+					"criterium": "Kryptographie",
+					"elemValue": 100.0
+				},
+				{
+					"label": "Java",
+					"criterium": "Web Server",
+					"elemValue": 70.0
+				},
+				{
+					"label": "Java",
+					"criterium": "Concurrency",
+					"elemValue": 70.0
+				},
+				{
+					"label": "Java",
+					"criterium": "REST/HATEOAS Unterstützung",
+					"elemValue": 0.0
+				},
+				{
+					"label": "Java",
+					"criterium": "Initialer Aufwand um Projekt auf zu setzten",
+					"elemValue": 100.0
+				},
+				{
+					"label": "Java",
+					"criterium": "Frameworks",
+					"elemValue": 100.0
+				},
+				{
+					"label": "Go",
+					"criterium": "Treiber",
+					"elemValue": 100.0
+				},
+				{
+					"label": "Go",
+					"criterium": "Kryptographie",
+					"elemValue": 100.0
+				},
+				{
+					"label": "Go",
+					"criterium": "Web Server",
+					"elemValue": 100.0
+				},
+				{
+					"label": "Go",
+					"criterium": "Concurrency",
+					"elemValue": 100.0
+				},
+				{
+					"label": "Go",
+					"criterium": "REST/HATEOAS Unterstützung",
+					"elemValue": 0.0
+				},
+				{
+					"label": "Go",
+					"criterium": "Initialer Aufwand um Projekt auf zu setzten",
+					"elemValue": 100.0
+				},
+				{
+					"label": "Go",
+					"criterium": "Frameworks",
+					"elemValue": 100.0
+				},
+				{
+					"label": "Rust",
+					"criterium": "Treiber",
+					"elemValue": 100.0
+				},
+				{
+					"label": "Rust",
+					"criterium": "Kryptographie",
+					"elemValue": 100.0
+				},
+				{
+					"label": "Rust",
+					"criterium": "Web Server",
+					"elemValue": 100.0
+				},
+				{
+					"label": "Rust",
+					"criterium": "Concurrency",
+					"elemValue": 100.0
+				},
+				{
+					"label": "Rust",
+					"criterium": "REST/HATEOAS Unterstützung",
+					"elemValue": 0.0
+				},
+				{
+					"label": "Rust",
+					"criterium": "Initialer Aufwand um Projekt auf zu setzten",
+					"elemValue": 100.0
+				},
+				{
+					"label": "Rust",
+					"criterium": "Frameworks",
+					"elemValue": 100.0
+				},
+				{
+					"label": "C++",
+					"criterium": "Treiber",
+					"elemValue": 100.0
+				},
+				{
+					"label": "C++",
+					"criterium": "Kryptographie",
+					"elemValue": 100.0
+				},
+				{
+					"label": "C++",
+					"criterium": "Web Server",
+					"elemValue": 100.0
+				},
+				{
+					"label": "C++",
+					"criterium": "Concurrency",
+					"elemValue": 70.0
+				},
+				{
+					"label": "C++",
+					"criterium": "REST/HATEOAS Unterstützung",
+					"elemValue": 0.0
+				},
+				{
+					"label": "C++",
+					"criterium": "Initialer Aufwand um Projekt auf zu setzten",
+					"elemValue": 100.0
+				},
+				{
+					"label": "C++",
+					"criterium": "Frameworks",
+					"elemValue": 100.0
+				},
+				{
+					"label": "Python",
+					"criterium": "Treiber",
+					"elemValue": 100.0
+				},
+				{
+					"label": "Python",
+					"criterium": "Kryptographie",
+					"elemValue": 100.0
+				},
+				{
+					"label": "Python",
+					"criterium": "Web Server",
+					"elemValue": 100.0
+				},
+				{
+					"label": "Python",
+					"criterium": "Concurrency",
+					"elemValue": 70.0
+				},
+				{
+					"label": "Python",
+					"criterium": "REST/HATEOAS Unterstützung",
+					"elemValue": 0.0
+				},
+				{
+					"label": "Python",
+					"criterium": "Initialer Aufwand um Projekt auf zu setzten",
+					"elemValue": 100.0
+				},
+				{
+					"label": "Python",
+					"criterium": "Frameworks",
+					"elemValue": 100.0
+				}
+			]
+		},
+		{
+			"label": "3_Programmierumgebung",
+			"criteriaElements": [
+				{
+					"label": "Java",
+					"criterium": "Multiplatform",
+					"elemValue": 100.0
+				},
+				{
+					"label": "Java",
+					"criterium": "Build Tool(s)",
+					"elemValue": 54.99999999999999
+				},
+				{
+					"label": "Java",
+					"criterium": "Debugging",
+					"elemValue": 60.0
+				},
+				{
+					"label": "Java",
+					"criterium": "Fehleranalyse",
+					"elemValue": 60.0
+				},
+				{
+					"label": "Java",
+					"criterium": "Testen",
+					"elemValue": 50.0
+				},
+				{
+					"label": "Java",
+					"criterium": "Profiling/Monitoring",
+					"elemValue": 100.0
+				},
+				{
+					"label": "Java",
+					"criterium": "Refactoring (Refaster)",
+					"elemValue": 100.0
+				},
+				{
+					"label": "Java",
+					"criterium": "Code-Quality Analyse Tools (SonarQube)",
+					"elemValue": 100.0
+				},
+				{
+					"label": "Java",
+					"criterium": "ISO 25000",
+					"elemValue": 0.0
+				},
+				{
+					"label": "Go",
+					"criterium": "Multiplatform",
+					"elemValue": 100.0
+				},
+				{
+					"label": "Go",
+					"criterium": "Build Tool(s)",
+					"elemValue": 86.66666666666664
+				},
+				{
+					"label": "Go",
+					"criterium": "Debugging",
+					"elemValue": 100.0
+				},
+				{
+					"label": "Go",
+					"criterium": "Fehleranalyse",
+					"elemValue": 80.0
+				},
+				{
+					"label": "Go",
+					"criterium": "Testen",
+					"elemValue": 100.0
+				},
+				{
+					"label": "Go",
+					"criterium": "Profiling/Monitoring",
+					"elemValue": 100.0
+				},
+				{
+					"label": "Go",
+					"criterium": "Refactoring (Refaster)",
+					"elemValue": 100.0
+				},
+				{
+					"label": "Go",
+					"criterium": "Code-Quality Analyse Tools (SonarQube)",
+					"elemValue": 100.0
+				},
+				{
+					"label": "Go",
+					"criterium": "ISO 25000",
+					"elemValue": 0.0
+				},
+				{
+					"label": "Rust",
+					"criterium": "Multiplatform",
+					"elemValue": 100.0
+				},
+				{
+					"label": "Rust",
+					"criterium": "Build Tool(s)",
+					"elemValue": 96.66666666666666
+				},
+				{
+					"label": "Rust",
+					"criterium": "Debugging",
+					"elemValue": 70.0
+				},
+				{
+					"label": "Rust",
+					"criterium": "Fehleranalyse",
+					"elemValue": 100.0
+				},
+				{
+					"label": "Rust",
+					"criterium": "Testen",
+					"elemValue": 100.0
+				},
+				{
+					"label": "Rust",
+					"criterium": "Profiling/Monitoring",
+					"elemValue": 100.0
+				},
+				{
+					"label": "Rust",
+					"criterium": "Refactoring (Refaster)",
+					"elemValue": 100.0
+				},
+				{
+					"label": "Rust",
+					"criterium": "Code-Quality Analyse Tools (SonarQube)",
+					"elemValue": 100.0
+				},
+				{
+					"label": "Rust",
+					"criterium": "ISO 25000",
+					"elemValue": 0.0
+				},
+				{
+					"label": "C++",
+					"criterium": "Multiplatform",
+					"elemValue": 50.0
+				},
+				{
+					"label": "C++",
+					"criterium": "Build Tool(s)",
+					"elemValue": 76.66666666666666
+				},
+				{
+					"label": "C++",
+					"criterium": "Debugging",
+					"elemValue": 70.0
+				},
+				{
+					"label": "C++",
+					"criterium": "Fehleranalyse",
+					"elemValue": 30.0
+				},
+				{
+					"label": "C++",
+					"criterium": "Testen",
+					"elemValue": 20.0
+				},
+				{
+					"label": "C++",
+					"criterium": "Profiling/Monitoring",
+					"elemValue": 70.0
+				},
+				{
+					"label": "C++",
+					"criterium": "Refactoring (Refaster)",
+					"elemValue": 0.0
+				},
+				{
+					"label": "C++",
+					"criterium": "Code-Quality Analyse Tools (SonarQube)",
+					"elemValue": 60.0
+				},
+				{
+					"label": "C++",
+					"criterium": "ISO 25000",
+					"elemValue": 0.0
+				},
+				{
+					"label": "Python",
+					"criterium": "Multiplatform",
+					"elemValue": 75.0
+				},
+				{
+					"label": "Python",
+					"criterium": "Build Tool(s)",
+					"elemValue": 58.33333333333333
+				},
+				{
+					"label": "Python",
+					"criterium": "Debugging",
+					"elemValue": 60.0
+				},
+				{
+					"label": "Python",
+					"criterium": "Fehleranalyse",
+					"elemValue": 60.0
+				},
+				{
+					"label": "Python",
+					"criterium": "Testen",
+					"elemValue": 20.0
+				},
+				{
+					"label": "Python",
+					"criterium": "Profiling/Monitoring",
+					"elemValue": 70.0
+				},
+				{
+					"label": "Python",
+					"criterium": "Refactoring (Refaster)",
+					"elemValue": 0.0
+				},
+				{
+					"label": "Python",
+					"criterium": "Code-Quality Analyse Tools (SonarQube)",
+					"elemValue": 100.0
+				},
+				{
+					"label": "Python",
+					"criterium": "ISO 25000",
+					"elemValue": 0.0
+				}
+			]
+		},
+		{
+			"label": "3_1_Multiplatform-IDE",
+			"criteriaElements": [
+				{
+					"label": "Java",
+					"criterium": "Code-Quality Analyse Tools",
+					"elemValue": 100.0
+				},
+				{
+					"label": "Java",
+					"criterium": "Refactoring",
+					"elemValue": 100.0
+				},
+				{
+					"label": "Go",
+					"criterium": "Code-Quality Analyse Tools",
+					"elemValue": 100.0
+				},
+				{
+					"label": "Go",
+					"criterium": "Refactoring",
+					"elemValue": 100.0
+				},
+				{
+					"label": "Rust",
+					"criterium": "Code-Quality Analyse Tools",
+					"elemValue": 100.0
+				},
+				{
+					"label": "Rust",
+					"criterium": "Refactoring",
+					"elemValue": 100.0
+				},
+				{
+					"label": "C++",
+					"criterium": "Code-Quality Analyse Tools",
+					"elemValue": 50.0
+				},
+				{
+					"label": "C++",
+					"criterium": "Refactoring",
+					"elemValue": 50.0
+				},
+				{
+					"label": "Python",
+					"criterium": "Code-Quality Analyse Tools",
+					"elemValue": 100.0
+				},
+				{
+					"label": "Python",
+					"criterium": "Refactoring",
+					"elemValue": 50.0
+				}
+			]
+		},
+		{
+			"label": "3_2_Build-Tools",
+			"criteriaElements": [
+				{
+					"label": "Java",
+					"criterium": "Festplattenspeicher",
+					"elemValue": 60.0
+				},
+				{
+					"label": "Java",
+					"criterium": "Crossplatform",
+					"elemValue": 80.0
+				},
+				{
+					"label": "Java",
+					"criterium": "Compile-Zeit",
+					"elemValue": 90.0
+				},
+				{
+					"label": "Java",
+					"criterium": "Dependency Management",
+					"elemValue": 100.0
+				},
+				{
+					"label": "Java",
+					"criterium": "Nativ ausführbare Binaries",
+					"elemValue": 0.0
+				},
+				{
+					"label": "Java",
+					"criterium": "Sicherheitskonzepte - Raceconditions, NullPointers, …",
+					"elemValue": 0.0
+				},
+				{
+					"label": "Go",
+					"criterium": "Festplattenspeicher",
+					"elemValue": 70.0
+				},
+				{
+					"label": "Go",
+					"criterium": "Crossplatform",
+					"elemValue": 100.0
+				},
+				{
+					"label": "Go",
+					"criterium": "Compile-Zeit",
+					"elemValue": 100.0
+				},
+				{
+					"label": "Go",
+					"criterium": "Dependency Management",
+					"elemValue": 100.0
+				},
+				{
+					"label": "Go",
+					"criterium": "Nativ ausführbare Binaries",
+					"elemValue": 100.0
+				},
+				{
+					"label": "Go",
+					"criterium": "Sicherheitskonzepte - Raceconditions, NullPointers, …",
+					"elemValue": 50.0
+				},
+				{
+					"label": "Rust",
+					"criterium": "Festplattenspeicher",
+					"elemValue": 80.0
+				},
+				{
+					"label": "Rust",
+					"criterium": "Crossplatform",
+					"elemValue": 100.0
+				},
+				{
+					"label": "Rust",
+					"criterium": "Compile-Zeit",
+					"elemValue": 100.0
+				},
+				{
+					"label": "Rust",
+					"criterium": "Dependency Management",
+					"elemValue": 100.0
+				},
+				{
+					"label": "Rust",
+					"criterium": "Nativ ausführbare Binaries",
+					"elemValue": 100.0
+				},
+				{
+					"label": "Rust",
+					"criterium": "Sicherheitskonzepte - Raceconditions, NullPointers, …",
+					"elemValue": 100.0
+				},
+				{
+					"label": "C++",
+					"criterium": "Festplattenspeicher",
+					"elemValue": 100.0
+				},
+				{
+					"label": "C++",
+					"criterium": "Crossplatform",
+					"elemValue": 100.0
+				},
+				{
+					"label": "C++",
+					"criterium": "Compile-Zeit",
+					"elemValue": 100.0
+				},
+				{
+					"label": "C++",
+					"criterium": "Dependency Management",
+					"elemValue": 60.0
+				},
+				{
+					"label": "C++",
+					"criterium": "Nativ ausführbare Binaries",
+					"elemValue": 100.0
+				},
+				{
+					"label": "C++",
+					"criterium": "Sicherheitskonzepte - Raceconditions, NullPointers, …",
+					"elemValue": 0.0
+				},
+				{
+					"label": "Python",
+					"criterium": "Festplattenspeicher",
+					"elemValue": 90.0
+				},
+				{
+					"label": "Python",
+					"criterium": "Crossplatform",
+					"elemValue": 80.0
+				},
+				{
+					"label": "Python",
+					"criterium": "Compile-Zeit",
+					"elemValue": 80.0
+				},
+				{
+					"label": "Python",
+					"criterium": "Dependency Management",
+					"elemValue": 100.0
+				},
+				{
+					"label": "Python",
+					"criterium": "Nativ ausführbare Binaries",
+					"elemValue": 0.0
+				},
+				{
+					"label": "Python",
+					"criterium": "Sicherheitskonzepte - Raceconditions, NullPointers, …",
+					"elemValue": 0.0
+				}
+			]
+		},
+		{
+			"label": "3_3_Code-Quality-Analyze",
+			"criteriaElements": [
+				{
+					"label": "Java",
+					"criterium": "Coding-Guidelines",
+					"elemValue": 100.0
+				},
+				{
+					"label": "Java",
+					"criterium": "Wartbarkeit",
+					"elemValue": 100.0
+				},
+				{
+					"label": "Go",
+					"criterium": "Coding-Guidelines",
+					"elemValue": 100.0
+				},
+				{
+					"label": "Go",
+					"criterium": "Wartbarkeit",
+					"elemValue": 100.0
+				},
+				{
+					"label": "Rust",
+					"criterium": "Coding-Guidelines",
+					"elemValue": 100.0
+				},
+				{
+					"label": "Rust",
+					"criterium": "Wartbarkeit",
+					"elemValue": 100.0
+				},
+				{
+					"label": "C++",
+					"criterium": "Coding-Guidelines",
+					"elemValue": 20.0
+				},
+				{
+					"label": "C++",
+					"criterium": "Wartbarkeit",
+					"elemValue": 100.0
+				},
+				{
+					"label": "Python",
+					"criterium": "Coding-Guidelines",
+					"elemValue": 80.0
+				},
+				{
+					"label": "Python",
+					"criterium": "Wartbarkeit",
+					"elemValue": 100.0
+				}
+			]
+		},
+		{
+			"label": "4_Business-Context",
+			"criteriaElements": [
+				{
+					"label": "Java",
+					"criterium": "Technisch",
+					"elemValue": 70.0
+				},
+				{
+					"label": "Java",
+					"criterium": "Fachlich",
+					"elemValue": 100.0
+				},
+				{
+					"label": "Java",
+					"criterium": "Betriebswitschaftlich",
+					"elemValue": 100.0
+				},
+				{
+					"label": "Go",
+					"criterium": "Technisch",
+					"elemValue": 100.0
+				},
+				{
+					"label": "Go",
+					"criterium": "Fachlich",
+					"elemValue": 100.0
+				},
+				{
+					"label": "Go",
+					"criterium": "Betriebswitschaftlich",
+					"elemValue": 100.0
+				},
+				{
+					"label": "Rust",
+					"criterium": "Technisch",
+					"elemValue": 100.0
+				},
+				{
+					"label": "Rust",
+					"criterium": "Fachlich",
+					"elemValue": 100.0
+				},
+				{
+					"label": "Rust",
+					"criterium": "Betriebswitschaftlich",
+					"elemValue": 100.0
+				},
+				{
+					"label": "C++",
+					"criterium": "Technisch",
+					"elemValue": 100.0
+				},
+				{
+					"label": "C++",
+					"criterium": "Fachlich",
+					"elemValue": 60.0
+				},
+				{
+					"label": "C++",
+					"criterium": "Betriebswitschaftlich",
+					"elemValue": 60.0
+				},
+				{
+					"label": "Python",
+					"criterium": "Technisch",
+					"elemValue": 60.0
+				},
+				{
+					"label": "Python",
+					"criterium": "Fachlich",
+					"elemValue": 80.0
+				},
+				{
+					"label": "Python",
+					"criterium": "Betriebswitschaftlich",
+					"elemValue": 80.0
+				}
+			]
+		},
+		{
+			"label": "5_Hardware-Context",
+			"criteriaElements": [
+				{
+					"label": "Java",
+					"criterium": "RAM",
+					"elemValue": 100.0
+				},
+				{
+					"label": "Java",
+					"criterium": "Prozessorarchitektur",
+					"elemValue": 100.0
+				},
+				{
+					"label": "Java",
+					"criterium": "Storage",
+					"elemValue": 100.0
+				},
+				{
+					"label": "Java",
+					"criterium": "Bekannten Kontexte",
+					"elemValue": 100.0
+				},
+				{
+					"label": "Go",
+					"criterium": "RAM",
+					"elemValue": 100.0
+				},
+				{
+					"label": "Go",
+					"criterium": "Prozessorarchitektur",
+					"elemValue": 100.0
+				},
+				{
+					"label": "Go",
+					"criterium": "Storage",
+					"elemValue": 100.0
+				},
+				{
+					"label": "Go",
+					"criterium": "Bekannten Kontexte",
+					"elemValue": 100.0
+				},
+				{
+					"label": "Rust",
+					"criterium": "RAM",
+					"elemValue": 100.0
+				},
+				{
+					"label": "Rust",
+					"criterium": "Prozessorarchitektur",
+					"elemValue": 100.0
+				},
+				{
+					"label": "Rust",
+					"criterium": "Storage",
+					"elemValue": 100.0
+				},
+				{
+					"label": "Rust",
+					"criterium": "Bekannten Kontexte",
+					"elemValue": 100.0
+				},
+				{
+					"label": "C++",
+					"criterium": "RAM",
+					"elemValue": 100.0
+				},
+				{
+					"label": "C++",
+					"criterium": "Prozessorarchitektur",
+					"elemValue": 100.0
+				},
+				{
+					"label": "C++",
+					"criterium": "Storage",
+					"elemValue": 100.0
+				},
+				{
+					"label": "C++",
+					"criterium": "Bekannten Kontexte",
+					"elemValue": 100.0
+				},
+				{
+					"label": "Python",
+					"criterium": "RAM",
+					"elemValue": 100.0
+				},
+				{
+					"label": "Python",
+					"criterium": "Prozessorarchitektur",
+					"elemValue": 100.0
+				},
+				{
+					"label": "Python",
+					"criterium": "Storage",
+					"elemValue": 100.0
+				},
+				{
+					"label": "Python",
+					"criterium": "Bekannten Kontexte",
+					"elemValue": 100.0
+				}
+			]
+		},
+		{
+			"label": "6_Laufzeitverhalten",
+			"criteriaElements": [
+				{
+					"label": "Java",
+					"criterium": "Laufzeitverhalten",
+					"elemValue": 59.99999999999999
+				},
+				{
+					"label": "Java",
+					"criterium": "Multithreading",
+					"elemValue": 60.0
+				},
+				{
+					"label": "Java",
+					"criterium": "Variantenbildung",
+					"elemValue": 60.0
+				},
+				{
+					"label": "Java",
+					"criterium": "Festplattenspeicher",
+					"elemValue": 60.0
+				},
+				{
+					"label": "Java",
+					"criterium": "Ausführumgebung",
+					"elemValue": 72.69212962962962
+				},
+				{
+					"label": "Java",
+					"criterium": "Isolation",
+					"elemValue": 80.0
+				},
+				{
+					"label": "Java",
+					"criterium": "Integration zwischen Modulen",
+					"elemValue": 86.66666666666666
+				},
+				{
+					"label": "Java",
+					"criterium": "Profiling/Monitoring",
+					"elemValue": 70.0
+				},
+				{
+					"label": "Go",
+					"criterium": "Laufzeitverhalten",
+					"elemValue": 93.33333333333331
+				},
+				{
+					"label": "Go",
+					"criterium": "Multithreading",
+					"elemValue": 100.0
+				},
+				{
+					"label": "Go",
+					"criterium": "Variantenbildung",
+					"elemValue": 100.0
+				},
+				{
+					"label": "Go",
+					"criterium": "Festplattenspeicher",
+					"elemValue": 80.0
+				},
+				{
+					"label": "Go",
+					"criterium": "Ausführumgebung",
+					"elemValue": 99.99999999999999
+				},
+				{
+					"label": "Go",
+					"criterium": "Isolation",
+					"elemValue": 100.0
+				},
+				{
+					"label": "Go",
+					"criterium": "Integration zwischen Modulen",
+					"elemValue": 99.99999999999999
+				},
+				{
+					"label": "Go",
+					"criterium": "Profiling/Monitoring",
+					"elemValue": 90.0
+				},
+				{
+					"label": "Rust",
+					"criterium": "Laufzeitverhalten",
+					"elemValue": 96.66666666666666
+				},
+				{
+					"label": "Rust",
+					"criterium": "Multithreading",
+					"elemValue": 100.0
+				},
+				{
+					"label": "Rust",
+					"criterium": "Variantenbildung",
+					"elemValue": 100.0
+				},
+				{
+					"label": "Rust",
+					"criterium": "Festplattenspeicher",
+					"elemValue": 100.0
+				},
+				{
+					"label": "Rust",
+					"criterium": "Ausführumgebung",
+					"elemValue": 87.6273148148148
+				},
+				{
+					"label": "Rust",
+					"criterium": "Isolation",
+					"elemValue": 100.0
+				},
+				{
+					"label": "Rust",
+					"criterium": "Integration zwischen Modulen",
+					"elemValue": 99.99999999999999
+				},
+				{
+					"label": "Rust",
+					"criterium": "Profiling/Monitoring",
+					"elemValue": 80.0
+				},
+				{
+					"label": "C++",
+					"criterium": "Laufzeitverhalten",
+					"elemValue": 99.99999999999999
+				},
+				{
+					"label": "C++",
+					"criterium": "Multithreading",
+					"elemValue": 70.0
+				},
+				{
+					"label": "C++",
+					"criterium": "Variantenbildung",
+					"elemValue": 80.0
+				},
+				{
+					"label": "C++",
+					"criterium": "Festplattenspeicher",
+					"elemValue": 100.0
+				},
+				{
+					"label": "C++",
+					"criterium": "Ausführumgebung",
+					"elemValue": 87.6273148148148
+				},
+				{
+					"label": "C++",
+					"criterium": "Isolation",
+					"elemValue": 100.0
+				},
+				{
+					"label": "C++",
+					"criterium": "Integration zwischen Modulen",
+					"elemValue": 60.0
+				},
+				{
+					"label": "C++",
+					"criterium": "Profiling/Monitoring",
+					"elemValue": 60.0
+				},
+				{
+					"label": "Python",
+					"criterium": "Laufzeitverhalten",
+					"elemValue": 63.33333333333333
+				},
+				{
+					"label": "Python",
+					"criterium": "Multithreading",
+					"elemValue": 70.0
+				},
+				{
+					"label": "Python",
+					"criterium": "Variantenbildung",
+					"elemValue": 0.0
+				},
+				{
+					"label": "Python",
+					"criterium": "Festplattenspeicher",
+					"elemValue": 60.0
+				},
+				{
+					"label": "Python",
+					"criterium": "Ausführumgebung",
+					"elemValue": 56.68981481481481
+				},
+				{
+					"label": "Python",
+					"criterium": "Isolation",
+					"elemValue": 100.0
+				},
+				{
+					"label": "Python",
+					"criterium": "Integration zwischen Modulen",
+					"elemValue": 60.0
+				},
+				{
+					"label": "Python",
+					"criterium": "Profiling/Monitoring",
+					"elemValue": 60.0
+				}
+			]
+		},
+		{
+			"label": "6_1_Laufzeitverhalten",
+			"criteriaElements": [
+				{
+					"label": "Java",
+					"criterium": "CPU-Last",
+					"elemValue": 100.0
+				},
+				{
+					"label": "Java",
+					"criterium": "Speicherverbrauch (GC)",
+					"elemValue": 30.0
+				},
+				{
+					"label": "Java",
+					"criterium": "Staruptime",
+					"elemValue": 50.0
+				},
+				{
+					"label": "Go",
+					"criterium": "CPU-Last",
+					"elemValue": 100.0
+				},
+				{
+					"label": "Go",
+					"criterium": "Speicherverbrauch (GC)",
+					"elemValue": 80.0
+				},
+				{
+					"label": "Go",
+					"criterium": "Staruptime",
+					"elemValue": 100.0
+				},
+				{
+					"label": "Rust",
+					"criterium": "CPU-Last",
+					"elemValue": 100.0
+				},
+				{
+					"label": "Rust",
+					"criterium": "Speicherverbrauch (GC)",
+					"elemValue": 90.0
+				},
+				{
+					"label": "Rust",
+					"criterium": "Staruptime",
+					"elemValue": 100.0
+				},
+				{
+					"label": "C++",
+					"criterium": "CPU-Last",
+					"elemValue": 100.0
+				},
+				{
+					"label": "C++",
+					"criterium": "Speicherverbrauch (GC)",
+					"elemValue": 100.0
+				},
+				{
+					"label": "C++",
+					"criterium": "Staruptime",
+					"elemValue": 100.0
+				},
+				{
+					"label": "Python",
+					"criterium": "CPU-Last",
+					"elemValue": 90.0
+				},
+				{
+					"label": "Python",
+					"criterium": "Speicherverbrauch (GC)",
+					"elemValue": 50.0
+				},
+				{
+					"label": "Python",
+					"criterium": "Staruptime",
+					"elemValue": 50.0
+				}
+			]
+		},
+		{
+			"label": "6_2_Ausführungsumgebung",
+			"criteriaElements": [
+				{
+					"label": "Java",
+					"criterium": "Virtuelle Maschiene",
+					"elemValue": 100.0
+				},
+				{
+					"label": "Java",
+					"criterium": "Interpreter",
+					"elemValue": 90.0
+				},
+				{
+					"label": "Java",
+					"criterium": "Nativ (Binary)",
+					"elemValue": 50.0
+				},
+				{
+					"label": "Java",
+					"criterium": "Container",
+					"elemValue": 100.0
+				},
+				{
+					"label": "Java",
+					"criterium": "Browser",
+					"elemValue": 0.0
+				},
+				{
+					"label": "Java",
+					"criterium": "Serverless",
+					"elemValue": 100.0
+				},
+				{
+					"label": "Go",
+					"criterium": "Virtuelle Maschiene",
+					"elemValue": 100.0
+				},
+				{
+					"label": "Go",
+					"criterium": "Interpreter",
+					"elemValue": 100.0
+				},
+				{
+					"label": "Go",
+					"criterium": "Nativ (Binary)",
+					"elemValue": 100.0
+				},
+				{
+					"label": "Go",
+					"criterium": "Container",
+					"elemValue": 100.0
+				},
+				{
+					"label": "Go",
+					"criterium": "Browser",
+					"elemValue": 100.0
+				},
+				{
+					"label": "Go",
+					"criterium": "Serverless",
+					"elemValue": 100.0
+				},
+				{
+					"label": "Rust",
+					"criterium": "Virtuelle Maschiene",
+					"elemValue": 100.0
+				},
+				{
+					"label": "Rust",
+					"criterium": "Interpreter",
+					"elemValue": 0.0
+				},
+				{
+					"label": "Rust",
+					"criterium": "Nativ (Binary)",
+					"elemValue": 100.0
+				},
+				{
+					"label": "Rust",
+					"criterium": "Container",
+					"elemValue": 100.0
+				},
+				{
+					"label": "Rust",
+					"criterium": "Browser",
+					"elemValue": 100.0
+				},
+				{
+					"label": "Rust",
+					"criterium": "Serverless",
+					"elemValue": 100.0
+				},
+				{
+					"label": "C++",
+					"criterium": "Virtuelle Maschiene",
+					"elemValue": 100.0
+				},
+				{
+					"label": "C++",
+					"criterium": "Interpreter",
+					"elemValue": 0.0
+				},
+				{
+					"label": "C++",
+					"criterium": "Nativ (Binary)",
+					"elemValue": 100.0
+				},
+				{
+					"label": "C++",
+					"criterium": "Container",
+					"elemValue": 100.0
+				},
+				{
+					"label": "C++",
+					"criterium": "Browser",
+					"elemValue": 100.0
+				},
+				{
+					"label": "C++",
+					"criterium": "Serverless",
+					"elemValue": 100.0
+				},
+				{
+					"label": "Python",
+					"criterium": "Virtuelle Maschiene",
+					"elemValue": 100.0
+				},
+				{
+					"label": "Python",
+					"criterium": "Interpreter",
+					"elemValue": 100.0
+				},
+				{
+					"label": "Python",
+					"criterium": "Nativ (Binary)",
+					"elemValue": 0.0
+				},
+				{
+					"label": "Python",
+					"criterium": "Container",
+					"elemValue": 100.0
+				},
+				{
+					"label": "Python",
+					"criterium": "Browser",
+					"elemValue": 0.0
+				},
+				{
+					"label": "Python",
+					"criterium": "Serverless",
+					"elemValue": 100.0
+				}
+			]
+		},
+		{
+			"label": "6_3_Integration-mit-andere-Modu",
+			"criteriaElements": [
+				{
+					"label": "Java",
+					"criterium": "Event driven",
+					"elemValue": 80.0
+				},
+				{
+					"label": "Java",
+					"criterium": "Message Driven",
+					"elemValue": 80.0
+				},
+				{
+					"label": "Java",
+					"criterium": "Synchron/Asynchron",
+					"elemValue": 100.0
+				},
+				{
+					"label": "Go",
+					"criterium": "Event driven",
+					"elemValue": 100.0
+				},
+				{
+					"label": "Go",
+					"criterium": "Message Driven",
+					"elemValue": 100.0
+				},
+				{
+					"label": "Go",
+					"criterium": "Synchron/Asynchron",
+					"elemValue": 100.0
+				},
+				{
+					"label": "Rust",
+					"criterium": "Event driven",
+					"elemValue": 100.0
+				},
+				{
+					"label": "Rust",
+					"criterium": "Message Driven",
+					"elemValue": 100.0
+				},
+				{
+					"label": "Rust",
+					"criterium": "Synchron/Asynchron",
+					"elemValue": 100.0
+				},
+				{
+					"label": "C++",
+					"criterium": "Event driven",
+					"elemValue": 60.0
+				},
+				{
+					"label": "C++",
+					"criterium": "Message Driven",
+					"elemValue": 60.0
+				},
+				{
+					"label": "C++",
+					"criterium": "Synchron/Asynchron",
+					"elemValue": 60.0
+				},
+				{
+					"label": "Python",
+					"criterium": "Event driven",
+					"elemValue": 60.0
+				},
+				{
+					"label": "Python",
+					"criterium": "Message Driven",
+					"elemValue": 60.0
+				},
+				{
+					"label": "Python",
+					"criterium": "Synchron/Asynchron",
+					"elemValue": 60.0
+				}
+			]
+		},
+		{
+			"label": "7_Community",
+			"criteriaElements": [
+				{
+					"label": "Java",
+					"criterium": "Akzeptanz der Srpache",
+					"elemValue": 100.0
+				},
+				{
+					"label": "Java",
+					"criterium": "Foundation-Support",
+					"elemValue": 0.0
+				},
+				{
+					"label": "Java",
+					"criterium": "Support durch Foren",
+					"elemValue": 100.0
+				},
+				{
+					"label": "Java",
+					"criterium": "Verfügbarkeit von Online Trianings, Literatur",
+					"elemValue": 100.0
+				},
+				{
+					"label": "Go",
+					"criterium": "Akzeptanz der Srpache",
+					"elemValue": 80.0
+				},
+				{
+					"label": "Go",
+					"criterium": "Foundation-Support",
+					"elemValue": 0.0
+				},
+				{
+					"label": "Go",
+					"criterium": "Support durch Foren",
+					"elemValue": 100.0
+				},
+				{
+					"label": "Go",
+					"criterium": "Verfügbarkeit von Online Trianings, Literatur",
+					"elemValue": 100.0
+				},
+				{
+					"label": "Rust",
+					"criterium": "Akzeptanz der Srpache",
+					"elemValue": 50.0
+				},
+				{
+					"label": "Rust",
+					"criterium": "Foundation-Support",
+					"elemValue": 100.0
+				},
+				{
+					"label": "Rust",
+					"criterium": "Support durch Foren",
+					"elemValue": 80.0
+				},
+				{
+					"label": "Rust",
+					"criterium": "Verfügbarkeit von Online Trianings, Literatur",
+					"elemValue": 80.0
+				},
+				{
+					"label": "C++",
+					"criterium": "Akzeptanz der Srpache",
+					"elemValue": 60.0
+				},
+				{
+					"label": "C++",
+					"criterium": "Foundation-Support",
+					"elemValue": 100.0
+				},
+				{
+					"label": "C++",
+					"criterium": "Support durch Foren",
+					"elemValue": 80.0
+				},
+				{
+					"label": "C++",
+					"criterium": "Verfügbarkeit von Online Trianings, Literatur",
+					"elemValue": 100.0
+				},
+				{
+					"label": "Python",
+					"criterium": "Akzeptanz der Srpache",
+					"elemValue": 90.0
+				},
+				{
+					"label": "Python",
+					"criterium": "Foundation-Support",
+					"elemValue": 100.0
+				},
+				{
+					"label": "Python",
+					"criterium": "Support durch Foren",
+					"elemValue": 100.0
+				},
+				{
+					"label": "Python",
+					"criterium": "Verfügbarkeit von Online Trianings, Literatur",
+					"elemValue": 100.0
+				}
+			]
+		}
+	]
+}

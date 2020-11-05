@@ -1,5 +1,7 @@
 package json.converter;
 
+import com.fasterxml.jackson.core.JsonProcessingException;
+import com.fasterxml.jackson.databind.ObjectMapper;
 import com.vladsch.flexmark.ast.Node;
 import com.vladsch.flexmark.html.HtmlRenderer;
 import com.vladsch.flexmark.parser.Parser;
@@ -33,7 +35,7 @@ public class JsonConverterTest {
         return new String(Files.readAllBytes(path));
     }
 
-    @Test
+    //@Test
     public void test() throws Exception {
         MutableDataSet options = new MutableDataSet();
         options.set(Parser.EXTENSIONS, Collections.singletonList(JsonConverterExtension.create()));
@@ -51,7 +53,7 @@ public class JsonConverterTest {
         JSONAssert.assertEquals(loadResource("test.json"), json, false);
     }
 
-    @Test
+    //@Test
     public void testExcelParsen() throws Exception {
 
         try (Stream<Path> paths = Files.walk(this.root)) {
@@ -78,7 +80,7 @@ public class JsonConverterTest {
         System.out.printf("----> root: ", this.root.getFileName());
     }
 
-    @Test
+    //@Test
     public void readExcelFile() throws Exception {
 
         try (Stream<Path> paths = Files.walk(this.root)) {
@@ -97,16 +99,56 @@ public class JsonConverterTest {
                 });
         }
     }
+    
+    @Test
+    public void convertObjects2JsonString() throws EncryptedDocumentException, IOException {
+    	
+    	String fileName = "";
+    	
+    	
+    	try (Stream<Path> paths = Files.walk(this.root, 2)) {
+            fileName = paths.map(path -> path.toString()).filter(f -> f.endsWith(".xlsx")).findFirst().get();
+                   
+        }
+    	System.out.println("fileName " + fileName);
+    	
+    	
+    	PlatformComparison pc = getContentFromExcelFile(fileName);
+    	//PlatformComparison pc = new PlatformComparison();
+        writeObjects2JsonFile(pc, "platform-comparison.json");
+        //return jsonString; 
+    }
+    
+    private static void writeObjects2JsonFile(PlatformComparison pc, String pathFile) {
+        ObjectMapper mapper = new ObjectMapper();
+ 
+        File file = new File(pathFile);
+        try {
+            // Serialize Java object info JSON file.
+            mapper.writeValue(file, pc);
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+    }
 
-    private void getContentFromExcelFile(String filePath) throws EncryptedDocumentException, IOException {
-        try (Workbook workbookTemp = WorkbookFactory.create(new File(filePath))) {
+    
+    /**
+     * 
+     * @param filePath
+     * @return PlatformComparison
+     * @throws EncryptedDocumentException
+     * @throws IOException
+     */
+    private PlatformComparison getContentFromExcelFile(String filePath) throws EncryptedDocumentException, IOException {
+    	PlatformComparison pc = new PlatformComparison();
+    	try (Workbook workbookTemp = WorkbookFactory.create(new File(filePath))) {
 
             // Retrieving the number of sheets in the Workbook
             System.out.println("Workbook has " + workbookTemp.getNumberOfSheets() + " Sheets : ");
 
             List<String> languages = collectLanguages(workbookTemp.getSheetAt(0));
             System.out.printf("Language count is %2d\n", languages.size());
-            PlatformComparison pc = new PlatformComparison();
+            
             pc.setLabel("Platformvergleich");
             List<ComparisonCriteria> ccList = new ArrayList<>();
             for (int i = 1; i < workbookTemp.getNumberOfSheets(); i++) {
@@ -125,6 +167,7 @@ public class JsonConverterTest {
         } catch (IOException e) {
             e.printStackTrace();
         }
+        return pc;
     }
 
     /**
