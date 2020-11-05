@@ -161,10 +161,10 @@ public class JsonConverterTest {
             			ce.setLabel(langName);
             			ce.setCriterium(critName);
             			ce.setElemValue(critValue);
-            			ceElements.add(ce);
+            			//ceElements.add(ce);
             		}
             	}
-            	printCellValue(cell);
+            	//printCellValue(cell);
             	
 //                String cellValue = dataFormatter.formatCellValue(cell);
 //                System.out.print("foreach cell: "+cellValue + "\t");
@@ -185,7 +185,7 @@ public class JsonConverterTest {
             
             //get language entry
             if(firstCol != null && firstCol.getRowIndex() > 20) {
-            	//langLabel = getCriterium(firstCol);
+            	langLabel = getCriterium(firstCol);
             }
 
             while (cellIterator.hasNext()) {
@@ -198,23 +198,24 @@ public class JsonConverterTest {
                             case STRING:
                                 //System.out.println("Last evaluated in cell as string\"" + cell.getRichStringCellValue().toString() + "\"");
                                 //critName = cell.getRichStringCellValue().toString();
-                                //critName = getFormulaString(cell);
+                                
                                 //printCellValue(cell);
                                 break;
                         }
                         
                      }
                     
-              
+                    
                     if(langLabel!= null && langLabel.length() > 0) {
-                		//critValue = getCritValue(cell);
+                		critValue = getCritValue(cell);
+                		critName = getFormulaString(cell);
                 		if(critValue != 0.0) {
                 			ComparisonElement ce = new ComparisonElement();
-                			//critName = getFormulaString(cell);
+                			critName = getFormulaString(cell);
                             ce.setLabel(langLabel);
                             ce.setElemValue(critValue);
                             ce.setCriterium(critName);
-                            //ceElements.add(ce);
+                            ceElements.add(ce);
 
                 		}
    		
