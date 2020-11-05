@@ -2,12 +2,12 @@ package xlsx.converter;
 
 import java.util.List;
 
-public class PlattformComparison {
+public class PlatformComparison {
 	
 	private String label;
 	private List<ComparisonCriteria> criteria;
 	
-	public PlattformComparison() {
+	public PlatformComparison() {
 		// TODO Auto-generated constructor stub
 	}
 

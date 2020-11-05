@@ -11,7 +11,10 @@ import org.eclipse.collections.impl.factory.Maps;
 import org.junit.jupiter.api.Test;
 import org.odftoolkit.odfdom.doc.OdfDocument;
 import org.skyscreamer.jsonassert.JSONAssert;
+
+import xlsx.converter.ComparisonCriteria;
 import xlsx.converter.ComparisonElement;
+import xlsx.converter.PlatformComparison;
 
 import java.io.File;
 import java.io.IOException;
@@ -103,13 +106,22 @@ public class JsonConverterTest {
 
             List<String> languages = collectLanguages(workbookTemp.getSheetAt(0));
             System.out.printf("Language count is %2d\n", languages.size());
-
+            PlatformComparison pc = new PlatformComparison();
+            pc.setLabel("Platformvergleich");
+            List<ComparisonCriteria> ccList = new ArrayList<>();
             for (int i = 1; i < workbookTemp.getNumberOfSheets(); i++) {
                 Sheet sheet = workbookTemp.getSheetAt(i);
                 System.out.println("Workbook Element " + sheet.getSheetName());
+                ComparisonCriteria cc = new ComparisonCriteria();
+                cc.setLabel(sheet.getSheetName());
                 List<ComparisonElement> ceElements = collectComparisonElements(workbookTemp.getSheetAt(i), languages);
-                ceElements.forEach((ComparisonElement ce) -> System.out.println("CE: " + ce.toString()));
+                ceElements.forEach((ComparisonElement ce) -> {
+                	System.out.println("CE: " + ce.toString());
+                });
+                cc.setCriteriaElements(ceElements);
+                ccList.add(cc);
             }
+            pc.setCriteria(ccList);
         } catch (IOException e) {
             e.printStackTrace();
         }
@@ -181,39 +193,6 @@ public class JsonConverterTest {
         return ceElements;
     }
 
-    private static String[] getSheetNameOutOfCellFormula(String cellFormula) {
-        String[] strings = cellFormula.replace("'", "").split("[\\_!]");
-        return strings;
-    }
-
-    private static String getLanguage(Cell cell) {
-        String langType = "";
-        if (cell.getCellType() == CellType.STRING) {
-            System.out.print("---> stringValue: " + cell.getRichStringCellValue().getString());
-            langType = cell.getRichStringCellValue().getString();
-        }
-        return langType;
-    }
-
-    private static String getCriterium(Cell cell) {
-        if (cell.getCellType() == CellType.STRING) {
-            return cell.getRichStringCellValue().toString();
-        } else if (cell.getCellType() == CellType.FORMULA) {
-            if (cell.getCachedFormulaResultType() == CellType.STRING) {
-                return cell.getRichStringCellValue().toString();
-            }
-        }
-        return "";
-    }
-
-    private static String getFormulaString(Cell cell) {
-        if (cell.getCellType() == CellType.FORMULA) {
-            String[] strings = getSheetNameOutOfCellFormula(cell.getCellFormula());
-            return strings[1] != null ? strings[1] : "";
-        }
-        return "";
-    }
-
     private static double getCritValue(Cell cell) {
         double critValue = 0;
         if (cell.getCellType() == CellType.NUMERIC) {
@@ -223,72 +202,10 @@ public class JsonConverterTest {
                 case NUMERIC:
                     critValue = cell.getNumericCellValue();
                     break;
+			default:
+				break;
             }
         }
         return critValue;
-    }
-
-
-    private static ComparisonElement createComparisonElement(Cell cell) {
-
-        ComparisonElement ce = new ComparisonElement();
-        if (cell.getCellType() == CellType.STRING) {
-
-            System.out.print("---> stringValue: " + cell.getRichStringCellValue().getString());
-        }
-        if (cell.getCellType() == CellType.NUMERIC) {
-            System.out.print("--> numericValue: " + cell.getNumericCellValue());
-        }
-
-        if (cell.getCellType() == CellType.FORMULA) {
-            System.out.println("Formula is " + cell.getCellFormula() + " --> colIndex: "
-                + cell.getColumnIndex() + "...rowIndex" + cell.getRowIndex());
-            //           String[] strings = getSheetNameOutOfCellFormula(cell.getCellFormula());
-            //           for (String str: strings) {
-            //       		System.out.print("---> stringSplittedValue: "+ str+"\n");
-            //   		}
-            switch (cell.getCachedFormulaResultType()) {
-                case NUMERIC:
-                    System.out.println("Last evaluated as: " + cell.getNumericCellValue());
-                    break;
-                case STRING:
-                    System.out.println("Last evaluated as string\"" + cell.getRichStringCellValue().toString() + "\"");
-
-                    break;
-            }
-        }
-        return ce;
-
-    }
-
-    private static void printCellValue(Cell cell) {
-
-        if (cell.getCellType() == CellType.STRING) {
-
-            System.out.print("---> stringValue: " + cell.getRichStringCellValue().getString());
-        }
-        if (cell.getCellType() == CellType.NUMERIC) {
-            System.out.print("--> numericValue: " + cell.getNumericCellValue());
-        }
-
-        if (cell.getCellType() == CellType.FORMULA) {
-            System.out.println("Formula is " + cell.getCellFormula() + " --> colIndex: "
-                + cell.getColumnIndex() + "...rowIndex" + cell.getRowIndex());
-            String[] strings = getSheetNameOutOfCellFormula(cell.getCellFormula());
-            for (String str : strings) {
-                System.out.print("---> stringSplittedValue: " + str + "\n");
-            }
-            switch (cell.getCachedFormulaResultType()) {
-                case NUMERIC:
-                    System.out.println("Last evaluated as: " + cell.getNumericCellValue());
-                    break;
-                case STRING:
-                    System.out.println("Last evaluated as string\"" + cell.getRichStringCellValue().toString() + "\"");
-
-                    break;
-            }
-        }
-
-
     }
 }
