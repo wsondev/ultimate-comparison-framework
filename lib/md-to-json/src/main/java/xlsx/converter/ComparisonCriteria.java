@@ -1,11 +1,11 @@
 package xlsx.converter;
 
-import java.util.Map;
+import java.util.List;
 
 public class ComparisonCriteria {
 	
 	private String label;
-	private Map<String, ComparisonElement> criteria;
+	private List<ComparisonElement> criteriaElements;
 	
 	public ComparisonCriteria() {
 		// TODO Auto-generated constructor stub
@@ -19,14 +19,13 @@ public class ComparisonCriteria {
 		this.label = label;
 	}
 
-	public Map<String, ComparisonElement> getCriteria() {
-		return criteria;
+	public List<ComparisonElement> getCriteriaElements() {
+		return criteriaElements;
 	}
 
-	public void setCriteria(Map<String, ComparisonElement> criteria) {
-		this.criteria = criteria;
+	public void setCriteriaElements(List<ComparisonElement> criteriaElements) {
+		this.criteriaElements = criteriaElements;
 	}
 	
 	
-
 }

@@ -2,29 +2,51 @@ package xlsx.converter;
 
 public class ComparisonElement {
 	
-	private String elementKey;
-	private String elementValue;
+	private String label;
+	private String criterium;
+	private double elemValue;
 	
 	public ComparisonElement() {
 		// TODO Auto-generated constructor stub
 	}
 
-	public String getElementKey() {
-		return elementKey;
-	}
-
-	public void setElementKey(String elementKey) {
-		this.elementKey = elementKey;
-	}
-
-	public String getElementValue() {
-		return elementValue;
-	}
-
-	public void setElementValue(String elementValue) {
-		this.elementValue = elementValue;
-	}
 	
-	
+
+	public String getLabel() {
+		return label;
+	}
+
+
+
+	public void setLabel(String label) {
+		this.label = label;
+	}
+
+
+
+	public String getCriterium() {
+		return criterium;
+	}
+
+	public void setCriterium(String criterium) {
+		this.criterium = criterium;
+	}
+
+
+
+	public double getElemValue() {
+		return elemValue;
+	}
+
+
+
+	public void setElemValue(double elemValue) {
+		this.elemValue = elemValue;
+	}
+
+	@Override
+	public String toString() {
+		return " -> " + this.label + " | " + this.criterium + " | " + this.elemValue;
+	}
 
 }
