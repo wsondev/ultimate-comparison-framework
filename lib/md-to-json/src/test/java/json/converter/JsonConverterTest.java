@@ -116,7 +116,7 @@ public class JsonConverterTest {
     }
 
     /**
-     * Returns the number of criteria for a given sheet. The criteria are located in the first row.
+     * Returns the list of criteria for a given sheet. The criteria are located in the first row.
      * First row first cell is metadata. The criteria are encoded in the following cells until the fist empty.
      * The empty cells are not stored in the final excel. This <a href="http://poi.apache.org/components/spreadsheet/quick-guide.html#Iterator">page</a>
      * explains how to iterate over them.
@@ -140,7 +140,7 @@ public class JsonConverterTest {
     }
 
     /**
-     * Returns the number of languages. The languages are beneath each other.
+     * Returns the list of languages. The languages are beneath each other.
      *
      * @param sheet Languages sheet
      * @return language count
@@ -162,11 +162,8 @@ public class JsonConverterTest {
     }
 
     private List<ComparisonElement> collectComparisonElements(Sheet sheet, List<String> languages) {
-
         List<String> criteria = collectCriteria(sheet);
         System.out.printf("Criteria count is %2d\n", criteria.size());
-
-        System.out.println("\n\nIterating over Rows and Columns using Iterator\n");
 
         List<ComparisonElement> ceElements = new ArrayList<>();
 
