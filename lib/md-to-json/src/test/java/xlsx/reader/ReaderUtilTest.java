@@ -57,11 +57,6 @@ public class ReaderUtilTest extends TestUtil {
     public void readTable_sheetWithPointTableWithReferenceGiven_expectsOk() {
         PointTable expected = expectedPointTableForSheetAtIndexTwo();
         PointTable result = ReaderUtil.readTable(this.wb.getSheetAt(2), ReaderUtil.collectLanguages(this.wb.getSheetAt(0)));
-        for (ColumnData eCd : expected.getColumns()) {
-            assertTrue(result.getColumns().contains(eCd), String.format("On header name %s", eCd.getLabel()));
-        }
-        for (int i = 0; i < expected.getRows().size(); i++) {
-            assertEquals(expected.getRows().get(i), result.getRows().get(i), String.format("Row at index %d", i));
-        }
+        assertEquals(expected, result);
     }
 }
