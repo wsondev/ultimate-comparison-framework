@@ -84,69 +84,76 @@ public abstract class TestUtil {
 
     protected PointTable expectedPointTableForSheetAtIndexTwo() {
         Set<ColumnData> columns = new TreeSet<>();
-        ColumnData paradigmen = new ColumnData("Paradigmen", ColumnData.Type.REFERENCE);
-        paradigmen.setReferencingSheetName("2_1_Paradigmen");
-        columns.add(paradigmen);
+        //Paradigms
+        ColumnData paradigms = new ColumnData("Paradigmen", ColumnData.Type.REFERENCE);
+        paradigms.setReferencingSheetName("2_1_Paradigmen");
+        columns.add(paradigms);
+        //Exception handling
         ColumnData exceptionHandling = new ColumnData("Exception Handling", ColumnData.Type.VALUE);
         columns.add(exceptionHandling);
-        ColumnData stdLib = new ColumnData("Std Lib & 3rd Party", ColumnData.Type.REFERENCE);
+        //Standard lib
+        ColumnData stdLib = new ColumnData("Std & 3rd Party Lib", ColumnData.Type.REFERENCE);
         stdLib.setReferencingSheetName("2_2_StdLib");
         columns.add(stdLib);
-        ColumnData modularisierung = new ColumnData("Modularisierung", ColumnData.Type.VALUE);
-        columns.add(modularisierung);
+        //Modularization
+        ColumnData modularization = new ColumnData("Modularisierung", ColumnData.Type.VALUE);
+        columns.add(modularization);
+        //Integration with C and C++
         ColumnData integrationOfCpp = new ColumnData("Integration mit System Libs (C, C++)", ColumnData.Type.VALUE);
         columns.add(integrationOfCpp);
+        //Integration with other programming languages
         ColumnData integrationOfOther = new ColumnData("Integration mit anderen Programiersprachen", ColumnData.Type.VALUE);
         columns.add(integrationOfOther);
-        ColumnData lernkurve = new ColumnData("Lernkurve", ColumnData.Type.VALUE);
-        columns.add(lernkurve);
+        //Learning curve
+        ColumnData learningCurve = new ColumnData("Lernkurve", ColumnData.Type.VALUE);
+        columns.add(learningCurve);
 
         List<RowData> rows = new ArrayList<>();
 
         List<CellData> javaResults = new ArrayList<>();
-        javaResults.add(new CellData(paradigmen, 90.341));
+        javaResults.add(new CellData(paradigms, 90.341));
         javaResults.add(new CellData(exceptionHandling, 100.0));
         javaResults.add(new CellData(stdLib, 74.727));
-        javaResults.add(new CellData(modularisierung, 100.0));
+        javaResults.add(new CellData(modularization, 100.0));
         javaResults.add(new CellData(integrationOfCpp, 70.0));
         javaResults.add(new CellData(integrationOfOther, 50.0));
-        javaResults.add(new CellData(lernkurve, 60.0));
+        javaResults.add(new CellData(learningCurve, 60.0));
 
         List<CellData> goResults = new ArrayList<>();
-        goResults.add(new CellData(paradigmen, 67.196));
+        goResults.add(new CellData(paradigms, 67.196));
         goResults.add(new CellData(exceptionHandling, 100.0));
         goResults.add(new CellData(stdLib, 82.644));
-        goResults.add(new CellData(modularisierung, 100.0));
+        goResults.add(new CellData(modularization, 100.0));
         goResults.add(new CellData(integrationOfCpp, 100.0));
         goResults.add(new CellData(integrationOfOther, 100.0));
-        goResults.add(new CellData(lernkurve, 100.0));
+        goResults.add(new CellData(learningCurve, 100.0));
 
         List<CellData> rustResults = new ArrayList<>();
-        rustResults.add(new CellData(paradigmen, 90.341));
+        rustResults.add(new CellData(paradigms, 90.341));
         rustResults.add(new CellData(exceptionHandling, 100.0));
         rustResults.add(new CellData(stdLib, 82.644));
-        rustResults.add(new CellData(modularisierung, 100.0));
+        rustResults.add(new CellData(modularization, 100.0));
         rustResults.add(new CellData(integrationOfCpp, 100.0));
         rustResults.add(new CellData(integrationOfOther, 100.0));
-        rustResults.add(new CellData(lernkurve, 30.0));
+        rustResults.add(new CellData(learningCurve, 30.0));
 
         List<CellData> cppResults = new ArrayList<>();
-        cppResults.add(new CellData(paradigmen, 92.273));
+        cppResults.add(new CellData(paradigms, 92.273));
         cppResults.add(new CellData(exceptionHandling, 100.0));
         cppResults.add(new CellData(stdLib, 77.969));
-        cppResults.add(new CellData(modularisierung, 100.0));
+        cppResults.add(new CellData(modularization, 100.0));
         cppResults.add(new CellData(integrationOfCpp, 100.0));
         cppResults.add(new CellData(integrationOfOther, 100.0));
-        cppResults.add(new CellData(lernkurve, 20.0));
+        cppResults.add(new CellData(learningCurve, 20.0));
 
         List<CellData> pythonResults = new ArrayList<>();
-        pythonResults.add(new CellData(paradigmen, 63.332));
+        pythonResults.add(new CellData(paradigms, 63.332));
         pythonResults.add(new CellData(exceptionHandling, 100.0));
         pythonResults.add(new CellData(stdLib, 77.969));
-        pythonResults.add(new CellData(modularisierung, 70.0));
+        pythonResults.add(new CellData(modularization, 70.0));
         pythonResults.add(new CellData(integrationOfCpp, 80.0));
         pythonResults.add(new CellData(integrationOfOther, 0.0));
-        pythonResults.add(new CellData(lernkurve, 50.0));
+        pythonResults.add(new CellData(learningCurve, 50.0));
 
         rows.add(new RowData(javaResults));
         rows.add(new RowData(goResults));
