@@ -181,7 +181,7 @@ public class JsonConverterTest {
                 ComparisonElement ce = new ComparisonElement();
                 ce.setLabel(languages.get(languageIndex));
                 ce.setCriterium(criteria.get(j - 1));
-                ce.setElemValue(ReaderUtil.extractPointsFromCell(cell));
+                ce.setElemValue(Double.valueOf(ReaderUtil.extractPointsFromCell(cell)));
                 ceElements.add(ce);
             }
         }

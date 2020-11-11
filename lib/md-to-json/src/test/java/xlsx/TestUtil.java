@@ -47,38 +47,44 @@ public abstract class TestUtil {
         columns.add(new ColumnData("Funktional", ColumnData.Type.VALUE));
         columns.add(new ColumnData("Objekt Orientiert", ColumnData.Type.VALUE));
         columns.add(new ColumnData("Summe", ColumnData.Type.VALUE));
+        columns.add(new ColumnData("", ColumnData.Type.VALUE));
 
         List<RowData> rows = new ArrayList<>();
 
         Set<CellData> javaResults = new TreeSet<>();
-        javaResults.add(new CellData(new ColumnData("Prozedural", ColumnData.Type.VALUE), 100.0));
-        javaResults.add(new CellData(new ColumnData("Funktional", ColumnData.Type.VALUE), 50.0));
-        javaResults.add(new CellData(new ColumnData("Objekt Orientiert", ColumnData.Type.VALUE), 100.0));
-        javaResults.add(new CellData(new ColumnData("Summe", ColumnData.Type.VALUE), 90.341));
+        javaResults.add(new CellData(new ColumnData("Prozedural", ColumnData.Type.VALUE), "100.0"));
+        javaResults.add(new CellData(new ColumnData("Funktional", ColumnData.Type.VALUE), "50.0"));
+        javaResults.add(new CellData(new ColumnData("Objekt Orientiert", ColumnData.Type.VALUE), "100.0"));
+        javaResults.add(new CellData(new ColumnData("Summe", ColumnData.Type.VALUE), "90.341"));
+        javaResults.add(new CellData(new ColumnData("", ColumnData.Type.VALUE), "Java"));
 
         Set<CellData> goResults = new TreeSet<>();
-        goResults.add(new CellData(new ColumnData("Prozedural", ColumnData.Type.VALUE), 100.0));
-        goResults.add(new CellData(new ColumnData("Funktional", ColumnData.Type.VALUE), 80.0));
-        goResults.add(new CellData(new ColumnData("Objekt Orientiert", ColumnData.Type.VALUE), 60.0));
-        goResults.add(new CellData(new ColumnData("Summe", ColumnData.Type.VALUE), 67.196));
+        goResults.add(new CellData(new ColumnData("Prozedural", ColumnData.Type.VALUE), "100.0"));
+        goResults.add(new CellData(new ColumnData("Funktional", ColumnData.Type.VALUE), "80.0"));
+        goResults.add(new CellData(new ColumnData("Objekt Orientiert", ColumnData.Type.VALUE), "60.0"));
+        goResults.add(new CellData(new ColumnData("Summe", ColumnData.Type.VALUE), "67.196"));
+        goResults.add(new CellData(new ColumnData("", ColumnData.Type.VALUE), "Go"));
 
         Set<CellData> rustResults = new TreeSet<>();
-        rustResults.add(new CellData(new ColumnData("Prozedural", ColumnData.Type.VALUE), 100.0));
-        rustResults.add(new CellData(new ColumnData("Funktional", ColumnData.Type.VALUE), 50.0));
-        rustResults.add(new CellData(new ColumnData("Objekt Orientiert", ColumnData.Type.VALUE), 100.0));
-        rustResults.add(new CellData(new ColumnData("Summe", ColumnData.Type.VALUE), 90.341));
+        rustResults.add(new CellData(new ColumnData("Prozedural", ColumnData.Type.VALUE), "100.0"));
+        rustResults.add(new CellData(new ColumnData("Funktional", ColumnData.Type.VALUE), "50.0"));
+        rustResults.add(new CellData(new ColumnData("Objekt Orientiert", ColumnData.Type.VALUE), "100.0"));
+        rustResults.add(new CellData(new ColumnData("Summe", ColumnData.Type.VALUE), "90.341"));
+        rustResults.add(new CellData(new ColumnData("", ColumnData.Type.VALUE), "Rust"));
 
         Set<CellData> cppResults = new TreeSet<>();
-        cppResults.add(new CellData(new ColumnData("Prozedural", ColumnData.Type.VALUE), 100.0));
-        cppResults.add(new CellData(new ColumnData("Funktional", ColumnData.Type.VALUE), 60.0));
-        cppResults.add(new CellData(new ColumnData("Objekt Orientiert", ColumnData.Type.VALUE), 100.0));
-        cppResults.add(new CellData(new ColumnData("Summe", ColumnData.Type.VALUE), 92.273));
+        cppResults.add(new CellData(new ColumnData("Prozedural", ColumnData.Type.VALUE), "100.0"));
+        cppResults.add(new CellData(new ColumnData("Funktional", ColumnData.Type.VALUE), "60.0"));
+        cppResults.add(new CellData(new ColumnData("Objekt Orientiert", ColumnData.Type.VALUE), "100.0"));
+        cppResults.add(new CellData(new ColumnData("Summe", ColumnData.Type.VALUE), "92.273"));
+        cppResults.add(new CellData(new ColumnData("", ColumnData.Type.VALUE), "C++"));
 
         Set<CellData> pythonResults = new TreeSet<>();
-        pythonResults.add(new CellData(new ColumnData("Prozedural", ColumnData.Type.VALUE), 100.0));
-        pythonResults.add(new CellData(new ColumnData("Funktional", ColumnData.Type.VALUE), 60.0));
-        pythonResults.add(new CellData(new ColumnData("Objekt Orientiert", ColumnData.Type.VALUE), 60.0));
-        pythonResults.add(new CellData(new ColumnData("Summe", ColumnData.Type.VALUE), 63.332));
+        pythonResults.add(new CellData(new ColumnData("Prozedural", ColumnData.Type.VALUE), "100.0"));
+        pythonResults.add(new CellData(new ColumnData("Funktional", ColumnData.Type.VALUE), "60.0"));
+        pythonResults.add(new CellData(new ColumnData("Objekt Orientiert", ColumnData.Type.VALUE), "60.0"));
+        pythonResults.add(new CellData(new ColumnData("Summe", ColumnData.Type.VALUE), "63.332"));
+        pythonResults.add(new CellData(new ColumnData("", ColumnData.Type.VALUE), "Python"));
 
         rows.add(new RowData(javaResults));
         rows.add(new RowData(goResults));
@@ -116,58 +122,66 @@ public abstract class TestUtil {
         //Points sum
         ColumnData pointSum = new ColumnData("Summe", ColumnData.Type.VALUE);
         columns.add(pointSum);
+        //Language
+        ColumnData language = new ColumnData("", ColumnData.Type.VALUE);
+        columns.add(language);
 
         List<RowData> rows = new ArrayList<>();
 
         Set<CellData> javaResults = new TreeSet<>();
-        javaResults.add(new CellData(paradigms, 90.341));
-        javaResults.add(new CellData(exceptionHandling, 100.0));
-        javaResults.add(new CellData(stdLib, 74.727));
-        javaResults.add(new CellData(modularization, 100.0));
-        javaResults.add(new CellData(integrationOfCpp, 70.0));
-        javaResults.add(new CellData(integrationOfOther, 50.0));
-        javaResults.add(new CellData(learningCurve, 60.0));
-        javaResults.add(new CellData(pointSum, 83.124));
+        javaResults.add(new CellData(paradigms, "90.341"));
+        javaResults.add(new CellData(exceptionHandling, "100.0"));
+        javaResults.add(new CellData(stdLib, "74.727"));
+        javaResults.add(new CellData(modularization, "100.0"));
+        javaResults.add(new CellData(integrationOfCpp, "70.0"));
+        javaResults.add(new CellData(integrationOfOther, "50.0"));
+        javaResults.add(new CellData(learningCurve, "60.0"));
+        javaResults.add(new CellData(pointSum, "83.124"));
+        javaResults.add(new CellData(language, ""));
 
         Set<CellData> goResults = new TreeSet<>();
-        goResults.add(new CellData(paradigms, 67.196));
-        goResults.add(new CellData(exceptionHandling, 100.0));
-        goResults.add(new CellData(stdLib, 82.644));
-        goResults.add(new CellData(modularization, 100.0));
-        goResults.add(new CellData(integrationOfCpp, 100.0));
-        goResults.add(new CellData(integrationOfOther, 100.0));
-        goResults.add(new CellData(learningCurve, 100.0));
-        goResults.add(new CellData(pointSum, 92.475));
+        goResults.add(new CellData(paradigms, "67.196"));
+        goResults.add(new CellData(exceptionHandling, "100.0"));
+        goResults.add(new CellData(stdLib, "82.644"));
+        goResults.add(new CellData(modularization, "100.0"));
+        goResults.add(new CellData(integrationOfCpp, "100.0"));
+        goResults.add(new CellData(integrationOfOther, "100.0"));
+        goResults.add(new CellData(learningCurve, "100.0"));
+        goResults.add(new CellData(pointSum, "92.475"));
+        goResults.add(new CellData(language, ""));
 
         Set<CellData> rustResults = new TreeSet<>();
-        rustResults.add(new CellData(paradigms, 90.341));
-        rustResults.add(new CellData(exceptionHandling, 100.0));
-        rustResults.add(new CellData(stdLib, 82.644));
-        rustResults.add(new CellData(modularization, 100.0));
-        rustResults.add(new CellData(integrationOfCpp, 100.0));
-        rustResults.add(new CellData(integrationOfOther, 100.0));
-        rustResults.add(new CellData(learningCurve, 30.0));
-        rustResults.add(new CellData(pointSum, 91.133));
+        rustResults.add(new CellData(paradigms, "90.341"));
+        rustResults.add(new CellData(exceptionHandling, "100.0"));
+        rustResults.add(new CellData(stdLib, "82.644"));
+        rustResults.add(new CellData(modularization, "100.0"));
+        rustResults.add(new CellData(integrationOfCpp, "100.0"));
+        rustResults.add(new CellData(integrationOfOther, "100.0"));
+        rustResults.add(new CellData(learningCurve, "30.0"));
+        rustResults.add(new CellData(pointSum, "91.133"));
+        rustResults.add(new CellData(language, ""));
 
         Set<CellData> cppResults = new TreeSet<>();
-        cppResults.add(new CellData(paradigms, 92.273));
-        cppResults.add(new CellData(exceptionHandling, 100.0));
-        cppResults.add(new CellData(stdLib, 77.969));
-        cppResults.add(new CellData(modularization, 100.0));
-        cppResults.add(new CellData(integrationOfCpp, 100.0));
-        cppResults.add(new CellData(integrationOfOther, 100.0));
-        cppResults.add(new CellData(learningCurve, 20.0));
-        cppResults.add(new CellData(pointSum, 89.757));
+        cppResults.add(new CellData(paradigms, "92.273"));
+        cppResults.add(new CellData(exceptionHandling, "100.0"));
+        cppResults.add(new CellData(stdLib, "77.969"));
+        cppResults.add(new CellData(modularization, "100.0"));
+        cppResults.add(new CellData(integrationOfCpp, "100.0"));
+        cppResults.add(new CellData(integrationOfOther, "100.0"));
+        cppResults.add(new CellData(learningCurve, "20.0"));
+        cppResults.add(new CellData(pointSum, "89.757"));
+        cppResults.add(new CellData(language, ""));
 
         Set<CellData> pythonResults = new TreeSet<>();
-        pythonResults.add(new CellData(paradigms, 63.332));
-        pythonResults.add(new CellData(exceptionHandling, 100.0));
-        pythonResults.add(new CellData(stdLib, 77.969));
-        pythonResults.add(new CellData(modularization, 70.0));
-        pythonResults.add(new CellData(integrationOfCpp, 80.0));
-        pythonResults.add(new CellData(integrationOfOther, 0.0));
-        pythonResults.add(new CellData(learningCurve, 50.0));
-        pythonResults.add(new CellData(pointSum, 70.559));
+        pythonResults.add(new CellData(paradigms, "63.332"));
+        pythonResults.add(new CellData(exceptionHandling, "100.0"));
+        pythonResults.add(new CellData(stdLib, "77.969"));
+        pythonResults.add(new CellData(modularization, "70.0"));
+        pythonResults.add(new CellData(integrationOfCpp, "80.0"));
+        pythonResults.add(new CellData(integrationOfOther, "0.0"));
+        pythonResults.add(new CellData(learningCurve, "50.0"));
+        pythonResults.add(new CellData(pointSum, "70.559"));
+        pythonResults.add(new CellData(language, ""));
 
         rows.add(new RowData(javaResults));
         rows.add(new RowData(goResults));

@@ -13,7 +13,7 @@ public final class CellData implements Comparable<CellData> {
 
     private final ColumnData column;
 
-    private final Double value;
+    private final String value;
 
     @Override
     public int compareTo(CellData cellData) {

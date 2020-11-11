@@ -42,8 +42,8 @@ public class ReaderUtilTest extends TestUtil {
     @Test
     public void extractPointsFromCell_cellWithPointsGiven_expectsOk() {
         Double expected = 83.124;
-        Double result = ReaderUtil.extractPointsFromCell(this.wb.getSheetAt(1).getRow(25).getCell(1));
-        assertEquals(expected, result);
+        String result = ReaderUtil.extractPointsFromCell(this.wb.getSheetAt(1).getRow(25).getCell(1));
+        assertEquals(expected.toString(), result);
     }
 
     @Test

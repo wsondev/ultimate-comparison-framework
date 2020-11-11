@@ -37,12 +37,14 @@ public final class ReaderUtil {
      * @param cell Cell with value to extract
      * @return Points
      */
-    public static Double extractPointsFromCell(Cell cell) {
+    public static String extractPointsFromCell(final Cell cell) {
         if (cell.getCellType() == CellType.NUMERIC) {
-            return Double.valueOf(decimalFormat.format(cell.getNumericCellValue()));
+            return decimalFormat.format(cell.getNumericCellValue());
         } else if (cell.getCellType() == CellType.FORMULA) {
             if (cell.getCachedFormulaResultType() == CellType.NUMERIC) {
-                return Double.valueOf(decimalFormat.format(cell.getNumericCellValue()));
+                return decimalFormat.format(cell.getNumericCellValue());
+            } else if (cell.getCachedFormulaResultType() == CellType.STRING) {
+                return cell.getStringCellValue();
             }
         }
         throw new RuntimeException("There is no value to extract from the cell");
@@ -110,16 +112,17 @@ public final class ReaderUtil {
         Row headerRow = sheet.getRow(headerRowIndex);
         for (int i = headerRowIndex + 1, languageIndex = 0; languageIndex < languages.size(); i++, languageIndex++) {
             Row row = sheet.getRow(i);
-            String languageName = row.getCell(0).getStringCellValue();
-            if (!languages.contains(languageName)) {
-                throw new RuntimeException("The language does not exists");
-            }
             Set<CellData> languageResults = new TreeSet<>();
-            for (int j = 1; j <= columnNames.size(); j++) {
+            for (int j = 0; j < columnNames.size() + 1; j++) {
                 Cell cell = row.getCell(j);
-                Cell headerCell = headerRow.getCell(j);
-                ColumnData cd = new ColumnData(headerCell.getStringCellValue(),
-                    CellType.FORMULA.equals(cell.getCellType()) ? ColumnData.Type.REFERENCE : ColumnData.Type.VALUE);
+                Cell headerCell = headerRow.getCell(j, Row.MissingCellPolicy.RETURN_NULL_AND_BLANK);
+                ColumnData cd;
+                if (headerCell == null) {
+                    cd = new ColumnData("", ColumnData.Type.VALUE);
+                } else {
+                    cd = new ColumnData(headerCell.getStringCellValue(),
+                        CellType.FORMULA.equals(cell.getCellType()) ? ColumnData.Type.REFERENCE : ColumnData.Type.VALUE);
+                }
                 if (cd.isReference()) {
                     cd.setReferencingSheetName(extractWorksheetName(cell));
                 }
