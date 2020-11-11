@@ -94,12 +94,20 @@ public final class ReaderUtil {
         return result;
     }
 
+    /**
+     * Returns the Point table from the given sheet for the languages.
+     *
+     * @param sheet Excel sheet with point table
+     * @param languages Languages list
+     * @return Point table
+     */
     public static PointTable readTable(final Sheet sheet, final List<String> languages) {
         List<String> columnNames = collectCriteria(sheet);
         Set<ColumnData> columns = new TreeSet<>();
         List<RowData> rows = new ArrayList<>();
         boolean columnAdded = true;
-        for (int i = 25, languageIndex = 0; languageIndex < languages.size(); i++, languageIndex++) {
+        int headerRow = sheet.getLastRowNum() - languages.size();
+        for (int i = headerRow + 1, languageIndex = 0; languageIndex < languages.size(); i++, languageIndex++) {
             Row row = sheet.getRow(i);
             List<CellData> languageResults = new ArrayList<>();
             for (int j = 1; j <= columnNames.size(); j++) {
@@ -117,18 +125,18 @@ public final class ReaderUtil {
             columnAdded = false;
             rows.add(new RowData(languageResults));
         }
-        return addSumToPointTable(new PointTable(columns, rows), sheet);
+        return addSumToPointTable(new PointTable(columns, rows), sheet, headerRow);
     }
 
     private static PointTable addSumToPointTable(PointTable pointTable,
-                                                 final Sheet sheet) {
-        int i = 24; //Header Row
-        Row row = sheet.getRow(i);
+                                                 final Sheet sheet,
+                                                 int headerRow) {
+        Row row = sheet.getRow(headerRow);
         Cell cell = row.getCell(row.getLastCellNum() - 1);
         ColumnData sumCellHeader = new ColumnData(cell.getStringCellValue(), ColumnData.Type.VALUE);
         pointTable.getColumns().add(sumCellHeader);
         for (RowData pointTableRow : pointTable.getRows()) {
-            row = sheet.getRow(++i);
+            row = sheet.getRow(++headerRow);
             pointTableRow.getCells().add(new CellData(sumCellHeader,
                 extractPointsFromCell(row.getCell(row.getLastCellNum() - 1))));
         }
