@@ -104,7 +104,8 @@ public final class ReaderUtil {
             List<CellData> languageResults = new ArrayList<>();
             for (int j = 1; j <= columnNames.size(); j++) {
                 Cell cell = row.getCell(j);
-                ColumnData cd = new ColumnData(columnNames.get(j - 1), CellType.FORMULA.equals(cell.getCellType()) ? ColumnData.Type.REFERENCE : ColumnData.Type.VALUE);
+                ColumnData cd = new ColumnData(columnNames.get(j - 1),
+                    CellType.FORMULA.equals(cell.getCellType()) ? ColumnData.Type.REFERENCE : ColumnData.Type.VALUE);
                 if (cd.isReference()) {
                     cd.setReferencingSheetName(extractWorksheetName(cell));
                 }
@@ -116,6 +117,21 @@ public final class ReaderUtil {
             columnAdded = false;
             rows.add(new RowData(languageResults));
         }
-        return new PointTable(columns, rows);
+        return addSumToPointTable(new PointTable(columns, rows), sheet);
+    }
+
+    private static PointTable addSumToPointTable(PointTable pointTable,
+                                                 final Sheet sheet) {
+        int i = 24; //Header Row
+        Row row = sheet.getRow(i);
+        Cell cell = row.getCell(row.getLastCellNum() - 1);
+        ColumnData sumCellHeader = new ColumnData(cell.getStringCellValue(), ColumnData.Type.VALUE);
+        pointTable.getColumns().add(sumCellHeader);
+        for (RowData pointTableRow : pointTable.getRows()) {
+            row = sheet.getRow(++i);
+            pointTableRow.getCells().add(new CellData(sumCellHeader,
+                extractPointsFromCell(row.getCell(row.getLastCellNum() - 1))));
+        }
+        return pointTable;
     }
 }
