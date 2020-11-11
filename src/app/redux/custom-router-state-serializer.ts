@@ -38,6 +38,10 @@ export class CustomRouterStateSerializer implements RouterStateSerializer<Router
 
             queryParams[key] = value;
         }
+        console.log('-------> CustomRouterStateSerializer - serialize - url: ', url);
+        console.log('-------> CustomRouterStateSerializer - serialize - sectionLink: ', sectionLink);
+        console.log('-------> CustomRouterStateSerializer - serialize - routerState: ', routerState);
+
 
         return { url, queryParams, sectionLink };
     }

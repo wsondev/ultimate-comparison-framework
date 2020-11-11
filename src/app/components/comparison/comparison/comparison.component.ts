@@ -1,15 +1,18 @@
 import { ChangeDetectorRef, Component, ViewChild } from '@angular/core';
-import { VersionInformation } from '../../../assets/VersionInformation';
-import { PaperCardComponent } from '../polymer/paper-card/paper-card.component';
-import { LatexTableComponent } from '../output/latex-table/latex-table.component';
-import { Store } from '@ngrx/store';
-import { IUCAppState } from '../../redux/uc.app-state';
-import { ConfigurationService } from './configuration/configuration.service';
-import { UCClickAction, UCDetailsAction, UCNewStateAction, UCSearchUpdateAction, UCTableOrderAction } from '../../redux/uc.action';
+import { VersionInformation } from '../../../../assets/VersionInformation';
+import { PaperCardComponent } from '../../polymer/paper-card/paper-card.component';
+import { LatexTableComponent } from '../../output/latex-table/latex-table.component';
+import { select, Store, Action } from '@ngrx/store';
+import { IUCAppState } from '../../../redux/uc.app-state';
+import { ConfigurationService } from './../configuration/configuration.service';
+import { UCClickAction, UCDetailsAction, UCNewStateAction, UCSearchUpdateAction, UCTableOrderAction } from '../../../redux/uc.action';
 import { isNullOrUndefined } from 'util';
 
 import { saveAs } from 'file-saver';
-import { Criteria, DataElement, Label } from '../../../../lib/gulp/model/model.module';
+import { Criteria, DataElement, Label } from '../../../../../lib/gulp/model/model.module';
+import { ActivatedRouteSnapshot, Router, RouterState, RouterStateSnapshot } from '@angular/router';
+import { state } from '@angular/core/src/animation/dsl';
+import { masterReducer, NEW_STATE_ACTION } from '../../../redux/uc.reducers';
 
 @Component({
     selector: 'comparison',
@@ -20,6 +23,8 @@ export class ComparisonComponent {
     static instance;
 
     public repository: string;
+
+    public routeSnapshot: RouterStateSnapshot;
 
     @ViewChild(LatexTableComponent) latexTable: LatexTableComponent;
     @ViewChild('genericTableHeader') genericTableHeader: PaperCardComponent;
@@ -33,13 +38,27 @@ export class ComparisonComponent {
 
     constructor(public configurationService: ConfigurationService,
                 private cd: ChangeDetectorRef,
+                private router: Router,
                 public store: Store<IUCAppState>) {
         if (isNullOrUndefined(ComparisonComponent.instance)) {
             ComparisonComponent.instance = this;
         }
+        const routerState: RouterState = router.routerState;
+        this.routeSnapshot = routerState.snapshot;
+        const root: ActivatedRouteSnapshot = this.routeSnapshot.root;
         this.configurationService.loadComparison(this.cd);
         this.repository = this.configurationService.configuration.repository;
+        this.routeState();
+        console.log('======> comparison - routerState: ', routerState);
+        console.log('======> comparison - snapshot: ', this.routeSnapshot);
+        console.log('======> comparison - root: ', root);
+
+
     }
+
+    routeState() {
+        this.store.dispatch({type: 'NEW_STATE_ACTION', NEW_STATE_ACTION});
+      }
 
     public getVersionInformation(): VersionInformation {
         return this.versionInformation;

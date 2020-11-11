@@ -1,5 +1,5 @@
 import { Component, ElementRef, EventEmitter, Input, Output, ViewChild } from '@angular/core';
-import { ComparisonComponent } from '../../comparison/comparison.component';
+import { ComparisonComponent } from '../../comparison/comparison/comparison.component';
 import { InputInterface } from '../input-interface';
 import { isNullOrUndefined } from 'util';
 import { IUCAppState } from '../../../redux/uc.app-state';

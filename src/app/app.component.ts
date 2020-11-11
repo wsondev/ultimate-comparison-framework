@@ -1,5 +1,5 @@
 import { Component, HostListener, ViewEncapsulation } from '@angular/core';
-import { ComparisonComponent } from './components/comparison/comparison.component';
+import { ComparisonComponent } from './components/comparison/comparison/comparison.component';
 
 @Component({
     selector: 'myapp',

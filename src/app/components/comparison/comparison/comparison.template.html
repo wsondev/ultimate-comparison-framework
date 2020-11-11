@@ -60,6 +60,16 @@
     </div>
 
     <div class="grid-large-content">
+        <div>
+
+        </div>
+        <nav aria-label="breadcrumb">
+            <ol class="breadcrumb cyan lighten-4">
+              <li class="breadcrumb-item"><a class="" href="{{routeSnapshot.url}}">{{(store | async).state.internalLink}}</a></li>
+            </ol>
+          </nav>
+          <a class="" href="{{routeSnapshot.url}}">{{routeSnapshot.url}}</a>
+          <p>{{routeSnapshot.url}}</p>
         <pcard [heading]="configurationService.configuration.tableTitle"
                [symbol]="true"
                [expand]="(store | async).state.tableExpand"

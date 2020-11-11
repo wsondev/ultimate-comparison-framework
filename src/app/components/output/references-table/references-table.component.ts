@@ -8,17 +8,19 @@ import { Citation } from '../../../../../lib/gulp/model/model.module';
     changeDetection: ChangeDetectionStrategy.OnPush
 })
 export class ReferencesTableComponent implements OnChanges {
-    @Input() changeNum: number = 0;
+    @Input() changeNum = 0;
     @Input() citationMap: Map<string, Citation> = new Map;
     @Input() prefix = '';
 
     @Input() citations: Array<Citation> = [];
 
     ngOnChanges(changes: SimpleChanges): void {
-        let citations: Array<Citation> = [];
+        const citations: Array<Citation> = [];
         this.citationMap.forEach((citation) => citations.push(citation));
 
         citations.sort((a, b) => a.index - b.index);
         this.citations = citations;
+        console.log('--> references-table.component--> ngOnChanges -> citations: ', this.citations);
+
     }
 }

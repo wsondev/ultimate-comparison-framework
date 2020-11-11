@@ -1,0 +1,30 @@
+
+<ng-template ngFor let-criteria let-i="index" [ngForOf]="configurationService.criteria">
+    <div>
+
+    </div>
+    <nav aria-label="breadcrumb">
+        <ol class="breadcrumb cyan lighten-4">
+            <li class="breadcrumb-item"><a class="" href="{{routeSnapshot.url}}">{{(store | async).state.internalLink}}</a></li>
+        </ol>
+        </nav>
+        <a class="" href="{{routeSnapshot.url}}">{{routeSnapshot.url}}</a>
+        <p>{{routeSnapshot.url}}</p>
+    <pcard [heading]="configurationService.configuration.tableTitle"
+            [symbol]="true"
+            [expand]="(store | async).state.tableExpand"
+            (expandChange)="store.dispatch({type: 'UPDATE_SETTINGS', enable: $event, operation: 'TableExpand'}); deferredUpdate()">
+        <generictable [items]="(store | async).state.currentElements"
+                        [columns]="(store | async).state.currentColumnNames"
+                        [types]="(store | async).state.columnTypes"
+                        [index]="(store | async).state.rowIndexes"
+                        [order]="(store | async).state.columnOrder"
+                        [changeNum]="configurationService.tableColumns.length + (store | async).state.currentColumnNames.length + (settingsOpen? 0: 1) + changed"
+                        (settingsCallback)="settingsOpen = true"
+                        (showDetails)="showDetails($event)"
+                        (orderChange)="changeOrder($event)"
+                        (searchFor)="criteriaClicked($event)"></generictable>
+    </pcard>
+</ng-template>
+
+

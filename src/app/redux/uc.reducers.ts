@@ -21,7 +21,7 @@ export const UPDATE_FILTER = 'UPDATE_FILTER';
 export const UPDATE_DATA = 'UPDATE_DATA';
 export const UPDATE_ORDER = 'UPDATE_ORDER';
 export const UPDATE_SETTINGS = 'UPDATE_SETTINGS';
-const UPDATE_ROUTE = 'ROUTER_NAVIGATION';
+export const UPDATE_ROUTE = 'ROUTER_NAVIGATION';
 export const CLICK_ACTION = 'CLICK_ACTION';
 export const NEW_STATE_ACTION = 'NEW_STATE_ACTION';
 export const TOGGLE_DETAILS_ACTION = 'TOGGLE_DETAILS_ACTION';
@@ -133,6 +133,8 @@ export function masterReducer(state: IUCAppState = new UcAppState(), action: UCA
         state = sortElements(state);
         state = updateElements(state);
     }
+    console.log('--> uc-reducer--> routeReducer -> state: ', state);
+
     return state;
 }
 
@@ -160,6 +162,8 @@ function clickReducer(state: IUCAppState, action: UCClickAction) {
             state.currentSearch.set(criteria.id, search);
         }
     }
+    console.log('--> uc-reducer--> masterReducer -> state: ', state);
+
     return state;
 }
 
@@ -208,6 +212,8 @@ function changeOrder(state: IUCAppState, action: UCTableOrderAction): IUCAppStat
     }
 
     state.columnOrder[action.index] = prefix === '+' ? 1 : -1;
+    console.log('--> uc-reducer--> changeOrder -> state: ', state);
+
     return state;
 }
 
@@ -216,6 +222,8 @@ function updateElements(state: IUCAppState): IUCAppState {
         putStateIntoURL(state);
         state.currentSaved = true;
     }
+    console.log('--> uc-reducer--> updateElements -> state: ', state);
+
     return state;
 }
 
@@ -244,6 +252,8 @@ function initSettings(state: IUCAppState): IUCAppState {
     state.latexDisplayTable = false;
     state.latexEnableTooltips = false;
     state.latexTooltipsAsFootnotes = false;
+    console.log('--> uc-reducer--> initSettings -> state: ', state);
+
 
     return state;
 }
@@ -265,6 +275,8 @@ function initColumn(state: IUCAppState): IUCAppState {
     state.columnsEnabled = columnsEnabled;
     state.columnsEnabledCache = columnsEnabledCache;
     state.columnDisplayAll = columnsEnabled.filter(value => value).length === columnNames.length;
+    console.log('--> uc-reducer--> initColumn -> state: ', state);
+
     return state;
 }
 
@@ -520,10 +532,10 @@ function filterElements(state: IUCAppState, criterias: Map<string, Criteria> = n
         });
 
         if (includeData) {
-            const dataElement: DataElement = data[i];
+            const dataEl: DataElement = data[i];
             const criteriaDataArray = [];
             state.currentColumns.forEach(key => {
-                criteriaDataArray.push(dataElement.getCriteriaData(decodeURIComponent(key)));
+                criteriaDataArray.push(dataEl.getCriteriaData(decodeURIComponent(key)));
             });
             dataElements.push(criteriaDataArray);
             indexes.push(i);
@@ -685,6 +697,8 @@ function routeReducer(state: IUCAppState = new UcAppState(), action: UCRouterAct
         return state;
     }
     const params = action.payload.routerState.queryParams;
+    state.internalLink = action.payload.routerState.sectionLink;
+    console.log('--> uc-reducer--> routeReducer -> action.payload.routerState: ', action.payload.routerState.sectionLink);
     const indices = decodeURIComponent(params.elements || '');
     const search = decodeURIComponent(params.search || params['?search'] || '');
     const filter = decodeURIComponent(params.filter || '');
@@ -692,7 +706,11 @@ function routeReducer(state: IUCAppState = new UcAppState(), action: UCRouterAct
     const columns = params.columns || '';
     const maximized = params.hasOwnProperty('maximized') || params.hasOwnProperty('?maximized');
     const order = decodeURIComponent(params.order || params['?order'] || '+id');
-    state.internalLink = params.sectionLink;
+
+
+    console.log('--> uc-reducer--> routeReducer -> params: ', params);
+    console.log('--> uc-reducer--> routeReducer -> state.internalLink: ', state.internalLink);
+
 
     search.split(';').map(x => x.trim()).forEach(x => {
         const splits = x.split(':');
@@ -739,6 +757,7 @@ function routeReducer(state: IUCAppState = new UcAppState(), action: UCRouterAct
 
     state.currentlyMaximized = maximized;
     state.currentOrder = order.split(',');
+    console.log('--> uc-reducer--> routeReducer -> state: ', state);
     return state;
 }
 

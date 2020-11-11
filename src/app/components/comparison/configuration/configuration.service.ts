@@ -22,14 +22,10 @@ export class ConfigurationService {
     public tableColumns: Array<string> = [];
     public criteriaValues: Array<Array<{ id: string, text: string, criteriaValue: CriteriaValue }>>;
 
-    constructor(public title: Title,
-                private http: HttpClient,
-                private store: Store<IUCAppState>) {
-        ConfigurationService.converter = new Showdown.Converter();
-    }
-
     static getHtml(converter: Showdown.Converter, citation: Map<string, Citation>, markdown: string): string {
-        if (isNullOrUndefined(markdown)) return null;
+        if (isNullOrUndefined(markdown)) {
+            return null;
+        }
         return ConfigurationService.converter.makeHtml(markdown.toString()).replace(/(?:\[@)([^\]]*)(?:\])/g, (match, dec) => {
             if (citation.has(dec)) {
                 return '<a class="cite-link" href="#' + dec + '">[' + citation.get(dec).index + ']</a>';
@@ -48,6 +44,12 @@ export class ConfigurationService {
         });
     }
 
+    constructor(public title: Title,
+                private http: HttpClient,
+                private store: Store<IUCAppState>) {
+        ConfigurationService.converter = new Showdown.Converter();
+    }
+
     public loadComparison(cd: ChangeDetectorRef) {
         Promise.all(
             [
@@ -57,6 +59,7 @@ export class ConfigurationService {
             ].map(res => res.toPromise())
         ).then((result) => {
             // Set configuration model
+            console.log('-------> configuration-service - loadComparison - result: ', result);
             this.configuration = Configuration.load(result[0]);
             this.criteria = this.configuration.criteria.filter(criteria => criteria.search);
             this.criteriaValues = this.criteria.map(criteria =>
@@ -115,6 +118,7 @@ export class ConfigurationService {
                     return dataElement;
                 }
             );
+            console.log('-------> configuration-service - loadComparison - ConfigurationService.data: ', ConfigurationService.data);
 
             // Set description
             this.description = ConfigurationService.getHtml(
@@ -132,6 +136,7 @@ export class ConfigurationService {
                         new Map())
                 )
             );
+            console.log('-------> configuration-service - loadComparison - ConfigurationService.data: ', this.description );
             this.store.dispatch(
                 {
                     type: 'UPDATE_SETTINGS',
