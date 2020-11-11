@@ -5,11 +5,12 @@ import lombok.Getter;
 import lombok.RequiredArgsConstructor;
 
 import java.util.List;
+import java.util.Set;
 
 @RequiredArgsConstructor
 @Getter
 @EqualsAndHashCode
 public class RowData {
 
-    private final List<CellData> cells;
+    private final Set<CellData> cells;
 }

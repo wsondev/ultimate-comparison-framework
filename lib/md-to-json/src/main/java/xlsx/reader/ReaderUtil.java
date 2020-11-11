@@ -106,13 +106,19 @@ public final class ReaderUtil {
         Set<ColumnData> columns = new TreeSet<>();
         List<RowData> rows = new ArrayList<>();
         boolean columnAdded = true;
-        int headerRow = sheet.getLastRowNum() - languages.size();
-        for (int i = headerRow + 1, languageIndex = 0; languageIndex < languages.size(); i++, languageIndex++) {
+        int headerRowIndex = sheet.getLastRowNum() - languages.size();
+        Row headerRow = sheet.getRow(headerRowIndex);
+        for (int i = headerRowIndex + 1, languageIndex = 0; languageIndex < languages.size(); i++, languageIndex++) {
             Row row = sheet.getRow(i);
-            List<CellData> languageResults = new ArrayList<>();
+            String languageName = row.getCell(0).getStringCellValue();
+            if (!languages.contains(languageName)) {
+                throw new RuntimeException("The language does not exists");
+            }
+            Set<CellData> languageResults = new TreeSet<>();
             for (int j = 1; j <= columnNames.size(); j++) {
                 Cell cell = row.getCell(j);
-                ColumnData cd = new ColumnData(columnNames.get(j - 1),
+                Cell headerCell = headerRow.getCell(j);
+                ColumnData cd = new ColumnData(headerCell.getStringCellValue(),
                     CellType.FORMULA.equals(cell.getCellType()) ? ColumnData.Type.REFERENCE : ColumnData.Type.VALUE);
                 if (cd.isReference()) {
                     cd.setReferencingSheetName(extractWorksheetName(cell));
@@ -125,7 +131,7 @@ public final class ReaderUtil {
             columnAdded = false;
             rows.add(new RowData(languageResults));
         }
-        return addSumToPointTable(new PointTable(columns, rows), sheet, headerRow);
+        return addSumToPointTable(new PointTable(columns, rows), sheet, headerRowIndex);
     }
 
     private static PointTable addSumToPointTable(PointTable pointTable,
