@@ -12,6 +12,8 @@ import java.util.Set;
 @EqualsAndHashCode
 public final class PointTable {
 
+    private final String name;
+
     private final Set<ColumnData> columns;
 
     private final List<RowData> rows;

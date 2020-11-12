@@ -91,7 +91,7 @@ public abstract class TestUtil {
         rows.add(new RowData(rustResults));
         rows.add(new RowData(cppResults));
         rows.add(new RowData(pythonResults));
-        return new PointTable(columns, rows);
+        return new PointTable("2_1_Paradigmen", columns, rows);
     }
 
     protected PointTable expectedPointTableForSheetAtIndexTwo() {
@@ -164,12 +164,12 @@ public abstract class TestUtil {
         Set<CellData> cppResults = new TreeSet<>();
         cppResults.add(new CellData(paradigms, "92.273"));
         cppResults.add(new CellData(exceptionHandling, "100.0"));
-        cppResults.add(new CellData(stdLib, "77.969"));
+        cppResults.add(new CellData(stdLib, "68.616"));
         cppResults.add(new CellData(modularization, "100.0"));
         cppResults.add(new CellData(integrationOfCpp, "100.0"));
         cppResults.add(new CellData(integrationOfOther, "100.0"));
         cppResults.add(new CellData(learningCurve, "20.0"));
-        cppResults.add(new CellData(pointSum, "89.757"));
+        cppResults.add(new CellData(pointSum, "87.670"));
         cppResults.add(new CellData(language, "Sprachen"));
 
         Set<CellData> pythonResults = new TreeSet<>();
@@ -188,6 +188,6 @@ public abstract class TestUtil {
         rows.add(new RowData(rustResults));
         rows.add(new RowData(cppResults));
         rows.add(new RowData(pythonResults));
-        return new PointTable(columns, rows);
+        return new PointTable("2_Programmiersprache", columns, rows);
     }
 }

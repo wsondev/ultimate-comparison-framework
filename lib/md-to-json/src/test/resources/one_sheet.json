@@ -1,0 +1,288 @@
+[
+    {
+        "sheetName": "2_Programmiersprache",
+        "header": ["Sprachen", "Paradigmen", "Exception Handling", "Std Lib & 3rd Party", "Modularisierung", "Integration von System libs (C, C++)", "Integration mit anderen Programiersprachen", "Lernkurve", "Summe"],
+        "rows": [
+            [
+                {
+                    "column": "Sprachen",
+                    "value": "Java",
+                    "hasSubTable": false,
+                    "subTableName": null
+                },
+                {
+                    "column": "Paradigmen",
+                    "value": "90.341",
+                    "hasSubTable": true,
+                    "subTableName": "2_1_Paradigmen"
+                },
+                {
+                    "column": "Exception Handling",
+                    "value": "100.0",
+                    "hasSubTable": false,
+                    "subTableName": null
+                },
+                {
+                    "column": "Std Lib & 3rd Party",
+                    "value": "74.727",
+                    "hasSubTable": true,
+                    "subTableName": "2_2_StdLib"
+                },
+                {
+                    "column": "Modularisierung",
+                    "value": "100.0",
+                    "hasSubTable": false,
+                    "subTableName": null
+                },
+                {
+                    "column": "Integration von System libs (C, C++)",
+                    "value": "70.0",
+                    "hasSubTable": false,
+                    "subTableName": null
+                },
+                {
+                    "column": "Integration mit anderen Programiersprachen",
+                    "value": "50.0",
+                    "hasSubTable": false,
+                    "subTableName": null
+                },
+                {
+                    "column": "Lernkurve",
+                    "value": "60.0",
+                    "hasSubTable": false,
+                    "subTableName": null
+                },
+                {
+                    "column": "Summe",
+                    "value": "83.124",
+                    "hasSubTable": false,
+                    "subTableName": null
+                }
+            ],
+            [
+                {
+                    "column": "Sprachen",
+                    "value": "Go",
+                    "hasSubTable": false,
+                    "subTableName": null
+                },
+                {
+                    "column": "Paradigmen",
+                    "value": "67.196",
+                    "hasSubTable": true,
+                    "subTableName": "2_1_Paradigmen"
+                },
+                {
+                    "column": "Exception Handling",
+                    "value": "100.0",
+                    "hasSubTable": false,
+                    "subTableName": null
+                },
+                {
+                    "column": "Std Lib & 3rd Party",
+                    "value": "82.644",
+                    "hasSubTable": true,
+                    "subTableName": "2_2_StdLib"
+                },
+                {
+                    "column": "Modularisierung",
+                    "value": "100.0",
+                    "hasSubTable": false,
+                    "subTableName": null
+                },
+                {
+                    "column": "Integration von System libs (C, C++)",
+                    "value": "100.0",
+                    "hasSubTable": false,
+                    "subTableName": null
+                },
+                {
+                    "column": "Integration mit anderen Programiersprachen",
+                    "value": "100.0",
+                    "hasSubTable": false,
+                    "subTableName": null
+                },
+                {
+                    "column": "Lernkurve",
+                    "value": "100.0",
+                    "hasSubTable": false,
+                    "subTableName": null
+                },
+                {
+                    "column": "Summe",
+                    "value": "92.475",
+                    "hasSubTable": false,
+                    "subTableName": null
+                }
+            ],
+            [
+                {
+                    "column": "Sprachen",
+                    "value": "Rust",
+                    "hasSubTable": false,
+                    "subTableName": null
+                },
+                {
+                    "column": "Paradigmen",
+                    "value": "90.341",
+                    "hasSubTable": true,
+                    "subTableName": "2_1_Paradigmen"
+                },
+                {
+                    "column": "Exception Handling",
+                    "value": "100.0",
+                    "hasSubTable": false,
+                    "subTableName": null
+                },
+                {
+                    "column": "Std Lib & 3rd Party",
+                    "value": "82.644",
+                    "hasSubTable": true,
+                    "subTableName": "2_2_StdLib"
+                },
+                {
+                    "column": "Modularisierung",
+                    "value": "100.0",
+                    "hasSubTable": false,
+                    "subTableName": null
+                },
+                {
+                    "column": "Integration von System libs (C, C++)",
+                    "value": "100.0",
+                    "hasSubTable": false,
+                    "subTableName": null
+                },
+                {
+                    "column": "Integration mit anderen Programiersprachen",
+                    "value": "100.0",
+                    "hasSubTable": false,
+                    "subTableName": null
+                },
+                {
+                    "column": "Lernkurve",
+                    "value": "30.0",
+                    "hasSubTable": false,
+                    "subTableName": null
+                },
+                {
+                    "column": "Summe",
+                    "value": "91.133",
+                    "hasSubTable": false,
+                    "subTableName": null
+                }
+            ],
+            [
+                {
+                    "column": "Sprachen",
+                    "value": "C++",
+                    "hasSubTable": false,
+                    "subTableName": null
+                },
+                {
+                    "column": "Paradigmen",
+                    "value": "92.273",
+                    "hasSubTable": true,
+                    "subTableName": "2_1_Paradigmen"
+                },
+                {
+                    "column": "Exception Handling",
+                    "value": "100.0",
+                    "hasSubTable": false,
+                    "subTableName": null
+                },
+                {
+                    "column": "Std Lib & 3rd Party",
+                    "value": "68.616",
+                    "hasSubTable": true,
+                    "subTableName": "2_2_StdLib"
+                },
+                {
+                    "column": "Modularisierung",
+                    "value": "100.0",
+                    "hasSubTable": false,
+                    "subTableName": null
+                },
+                {
+                    "column": "Integration von System libs (C, C++)",
+                    "value": "100.0",
+                    "hasSubTable": false,
+                    "subTableName": null
+                },
+                {
+                    "column": "Integration mit anderen Programiersprachen",
+                    "value": "100.0",
+                    "hasSubTable": false,
+                    "subTableName": null
+                },
+                {
+                    "column": "Lernkurve",
+                    "value": "20.0",
+                    "hasSubTable": false,
+                    "subTableName": null
+                },
+                {
+                    "column": "Summe",
+                    "value": "87.670",
+                    "hasSubTable": false,
+                    "subTableName": null
+                }
+            ],
+            [
+                {
+                    "column": "Sprachen",
+                    "value": "Python",
+                    "hasSubTable": false,
+                    "subTableName": null
+                },
+                {
+                    "column": "Paradigmen",
+                    "value": "63.332",
+                    "hasSubTable": true,
+                    "subTableName": "2_1_Paradigmen"
+                },
+                {
+                    "column": "Exception Handling",
+                    "value": "100.0",
+                    "hasSubTable": false,
+                    "subTableName": null
+                },
+                {
+                    "column": "Std Lib & 3rd Party",
+                    "value": "77.969",
+                    "hasSubTable": true,
+                    "subTableName": "2_2_StdLib"
+                },
+                {
+                    "column": "Modularisierung",
+                    "value": "70.0",
+                    "hasSubTable": false,
+                    "subTableName": null
+                },
+                {
+                    "column": "Integration von System libs (C, C++)",
+                    "value": "80.0",
+                    "hasSubTable": false,
+                    "subTableName": null
+                },
+                {
+                    "column": "Integration mit anderen Programiersprachen",
+                    "value": "0.0",
+                    "hasSubTable": false,
+                    "subTableName": null
+                },
+                {
+                    "column": "Lernkurve",
+                    "value": "50.0",
+                    "hasSubTable": false,
+                    "subTableName": null
+                },
+                {
+                    "column": "Summe",
+                    "value": "70.559",
+                    "hasSubTable": false,
+                    "subTableName": null
+                }
+            ]
+        ]
+    }
+]
