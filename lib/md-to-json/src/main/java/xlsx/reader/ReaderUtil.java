@@ -1,16 +1,32 @@
 package xlsx.reader;
 
-import org.apache.poi.ss.usermodel.Cell;
-import org.apache.poi.ss.usermodel.CellType;
-import org.apache.poi.ss.usermodel.Row;
-import org.apache.poi.ss.usermodel.Sheet;
+import org.apache.poi.ss.usermodel.*;
 
+import java.io.IOException;
+import java.nio.file.Path;
 import java.text.DecimalFormat;
 import java.util.*;
+import java.util.function.Function;
 
-public final class ReaderUtil {
+public final class ReaderUtil implements Function<Path, String> {
 
     private static final DecimalFormat decimalFormat = new DecimalFormat("###.###");
+
+    private ReaderUtil() {
+    }
+
+    public static Function<Path, String> createFromPath() {
+        return new ReaderUtil();
+    }
+
+    @Override
+    public String apply(Path path) {
+        try (Workbook wb = WorkbookFactory.create(path.toFile())) {
+            return "[{\"name\":\"hello\"}]";
+        } catch (IOException e) {
+            throw new RuntimeException(e);
+        }
+    }
 
     /**
      * Returns the referenced sheet name from the formula.
@@ -62,7 +78,7 @@ public final class ReaderUtil {
     public static List<String> collectCriteria(Sheet sheet) {
         List<String> result = new ArrayList<>();
         Row row = sheet.getRow(0);
-        for (int i = 1; i < 100; i ++) {
+        for (int i = 1; i < 100; i++) {
             Cell c = row.getCell(i, Row.MissingCellPolicy.RETURN_BLANK_AS_NULL);
 
             if (c == null || !CellType.STRING.equals(c.getCellType())) {
@@ -99,7 +115,7 @@ public final class ReaderUtil {
     /**
      * Returns the Point table from the given sheet for the languages.
      *
-     * @param sheet Excel sheet with point table
+     * @param sheet     Excel sheet with point table
      * @param languages Languages list
      * @return Point table
      */
@@ -115,14 +131,9 @@ public final class ReaderUtil {
             Set<CellData> languageResults = new TreeSet<>();
             for (int j = 0; j < columnNames.size() + 1; j++) {
                 Cell cell = row.getCell(j);
-                Cell headerCell = headerRow.getCell(j, Row.MissingCellPolicy.RETURN_NULL_AND_BLANK);
-                ColumnData cd;
-                if (headerCell == null) {
-                    cd = new ColumnData("", ColumnData.Type.VALUE);
-                } else {
-                    cd = new ColumnData(headerCell.getStringCellValue(),
-                        CellType.FORMULA.equals(cell.getCellType()) ? ColumnData.Type.REFERENCE : ColumnData.Type.VALUE);
-                }
+                Cell headerCell = headerRow.getCell(j);
+                ColumnData cd = new ColumnData(headerCell.getStringCellValue(),
+                    CellType.FORMULA.equals(cell.getCellType()) ? ColumnData.Type.REFERENCE : ColumnData.Type.VALUE);
                 if (cd.isReference()) {
                     cd.setReferencingSheetName(extractWorksheetName(cell));
                 }
