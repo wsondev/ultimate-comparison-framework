@@ -5,58 +5,58 @@
         "rows": [
             [
                 {
+                    "subTableName": null,
+                    "hasSubTable": false,
                     "column": "Sprachen",
-                    "value": "Java",
-                    "hasSubTable": false,
-                    "subTableName": null
+                    "value": "Java"
                 },
                 {
+                    "subTableName": "2_1_Paradigmen",
+                    "hasSubTable": true,
                     "column": "Paradigmen",
-                    "value": "90.341",
-                    "hasSubTable": true,
-                    "subTableName": "2_1_Paradigmen"
+                    "value": "90.341"
                 },
                 {
+                    "subTableName": null,
+                    "hasSubTable": false,
                     "column": "Exception Handling",
-                    "value": "100.0",
-                    "hasSubTable": false,
-                    "subTableName": null
+                    "value": "100.0"
                 },
                 {
-                    "column": "Std Lib & 3rd Party",
-                    "value": "74.727",
+                    "subTableName": "2_2_StdLib",
                     "hasSubTable": true,
-                    "subTableName": "2_2_StdLib"
+                    "column": "Std Lib & 3rd Party",
+                    "value": "74.727"
                 },
                 {
+                    "subTableName": null,
+                    "hasSubTable": false,
                     "column": "Modularisierung",
-                    "value": "100.0",
-                    "hasSubTable": false,
-                    "subTableName": null
+                    "value": "100.0"
                 },
                 {
+                    "subTableName": null,
+                    "hasSubTable": false,
                     "column": "Integration von System libs (C, C++)",
-                    "value": "70.0",
-                    "hasSubTable": false,
-                    "subTableName": null
+                    "value": "70.0"
                 },
                 {
+                    "subTableName": null,
+                    "hasSubTable": false,
                     "column": "Integration mit anderen Programiersprachen",
-                    "value": "50.0",
-                    "hasSubTable": false,
-                    "subTableName": null
+                    "value": "50.0"
                 },
                 {
+                    "subTableName": null,
+                    "hasSubTable": false,
                     "column": "Lernkurve",
-                    "value": "60.0",
-                    "hasSubTable": false,
-                    "subTableName": null
+                    "value": "60.0"
                 },
                 {
-                    "column": "Summe",
-                    "value": "83.124",
+                    "subTableName": null,
                     "hasSubTable": false,
-                    "subTableName": null
+                    "column": "Summe",
+                    "value": "83.124"
                 }
             ],
             [
