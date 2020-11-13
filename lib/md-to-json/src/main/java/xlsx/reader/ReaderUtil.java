@@ -1,6 +1,5 @@
 package xlsx.reader;
 
-import com.google.gson.Gson;
 import org.apache.poi.ss.usermodel.*;
 import xlsx.converter.PointTableToViewMapper;
 import xlsx.converter.PointTableView;
@@ -11,30 +10,28 @@ import java.text.DecimalFormat;
 import java.util.*;
 import java.util.function.Function;
 
-public final class ReaderUtil implements Function<Path, String> {
+public final class ReaderUtil implements Function<Path, List<PointTableView>> {
 
     private static final DecimalFormat decimalFormat = new DecimalFormat("###.###");
 
     private final Function<PointTable, PointTableView> tableMapper = new PointTableToViewMapper();
 
-    private final Gson gson = new Gson();
-
     private ReaderUtil() {
     }
 
-    public static Function<Path, String> create() {
+    public static Function<Path, List<PointTableView>> create() {
         return new ReaderUtil();
     }
 
     @Override
-    public String apply(Path path) {
+    public List<PointTableView> apply(Path path) {
         try (Workbook wb = WorkbookFactory.create(path.toFile())) {
             List<String> languages = collectLanguages(wb.getSheetAt(0));
             List<PointTableView> views = new ArrayList<>();
             for (int i = 1; i < wb.getNumberOfSheets(); ++i) {
                 views.add(tableMapper.apply(readTable(wb.getSheetAt(i), languages)));
             }
-            return gson.toJson(views);
+            return views;
         } catch (IOException e) {
             throw new RuntimeException(e);
         }

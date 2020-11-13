@@ -8,6 +8,7 @@ import java.util.Collections;
 import java.util.List;
 import java.util.Map;
 import java.util.Objects;
+import java.util.function.Predicate;
 import java.util.stream.Collectors;
 import java.util.stream.Stream;
 
@@ -30,6 +31,8 @@ import org.apache.commons.cli.Options;
 import org.apache.commons.cli.ParseException;
 import org.eclipse.collections.impl.factory.Maps;
 import org.tinylog.Logger;
+import xlsx.converter.PointTableView;
+import xlsx.reader.ReaderUtil;
 
 public class Converter {
 
@@ -157,14 +160,29 @@ public class Converter {
         if (multiple) {
             createTmpDirectory(tmp);
 
-            Object collect = getMarkdownFiles(input)
+            Object collect = getFiles(input, p-> p.toString().endsWith(".md"))
                 .map(this::convert)
                 .map(value -> gson.fromJson(value, List.class))
                 .flatMap(List::stream)
                 .collect(Collectors.toList());
             writeFile(output, gson.toJson(collect, List.class));
+
+            List<PointTableView> ptv = getFiles(input, p -> p.toString().endsWith(".xlsx"))
+                .map(ReaderUtil.create())
+                .flatMap(List::stream)
+                .collect(Collectors.toList());
+            if (ptv.size() > 0) {
+                writeFile(output.getParent().resolve(Path.of("platform-comparison.json")), gson.toJson(ptv));
+            }
         } else {
-            convert(input, output);
+            if (input.toString().endsWith(".md")) {
+                convert(input, output);
+            } else if (input.toString().endsWith(".xlsx")) {
+                writeFile(output.getParent().resolve(Path.of("platform-comparison.json")),
+                    gson.toJson(ReaderUtil.create().apply(input)));
+            } else {
+                throw new RuntimeException("File ending is not recognized.");
+            }
         }
     }
 
@@ -257,12 +275,12 @@ public class Converter {
         }
     }
 
-    private Stream<Path> getMarkdownFiles(Path path) {
+    private Stream<Path> getFiles(Path path, final Predicate<Path> filter) {
         Stream<Path> result = Stream.empty();
         try {
             result = Files.list(path)
                     .filter(Objects::nonNull)
-                    .filter(p -> p.toString().endsWith(".md"));
+                    .filter(filter);
         } catch (IOException e) {
             Logger.error("Could not get markdown files for path {}", path);
             Logger.error(e);
