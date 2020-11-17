@@ -32,7 +32,9 @@ import org.apache.commons.cli.ParseException;
 import org.eclipse.collections.impl.factory.Maps;
 import org.tinylog.Logger;
 import xlsx.converter.PointTableView;
+import xlsx.converter.PointTableViewFlat;
 import xlsx.reader.ReaderUtil;
+import xlsx.reader.ReaderUtilFlat;
 
 public class Converter {
 
@@ -173,6 +175,14 @@ public class Converter {
                 .collect(Collectors.toList());
             if (ptv.size() > 0) {
                 writeFile(output.getParent().resolve(Path.of("platform-comparison.json")), gson.toJson(ptv));
+            }
+
+            List<PointTableViewFlat> ptvf = getFiles(input, p -> p.toString().endsWith(".xlsx"))
+                .map(ReaderUtilFlat.create())
+                .flatMap(List::stream)
+                .collect(Collectors.toList());
+            if (ptv.size() > 0) {
+                writeFile(output.getParent().resolve(Path.of("platform-comparison-flat.json")), gson.toJson(ptvf));
             }
         } else {
             if (input.toString().endsWith(".md")) {

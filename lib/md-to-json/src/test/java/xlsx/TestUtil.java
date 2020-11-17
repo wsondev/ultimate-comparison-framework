@@ -6,6 +6,7 @@ import org.junit.jupiter.api.AfterEach;
 import org.junit.jupiter.api.BeforeEach;
 import xlsx.converter.PointTableView;
 import xlsx.converter.PointTableViewCell;
+import xlsx.converter.PointTableViewFlat;
 import xlsx.reader.CellData;
 import xlsx.reader.ColumnData;
 import xlsx.reader.PointTable;
@@ -263,5 +264,74 @@ public abstract class TestUtil {
         rows.add(cppResults.stream().sorted(Comparator.comparing(PointTableViewCell::getColumn)).collect(toList()));
         rows.add(pythonResults.stream().sorted(Comparator.comparing(PointTableViewCell::getColumn)).collect(toList()));
         return new PointTableView("2_Programmiersprache", headers, rows);
+    }
+
+    protected PointTableViewFlat expectedPointTableViewFlatForSheetAtIndexTwo() {
+        List<String> headers = Stream.of("Sprachen", "Paradigmen", "Exception Handling", "Std Lib & 3rd Party",
+            "Modularisierung", "Integration von System libs (C, C++)", "Integration mit anderen Programiersprachen",
+            "Lernkurve", "Summe").sorted().collect(toList());
+        List<Map<String, PointTableViewCell>> rows = new ArrayList<>();
+
+        Map<String, PointTableViewCell> javaResults = new HashMap<>();
+        javaResults.put("Sprachen", new PointTableViewCell("Sprachen", "Java", false));
+        javaResults.put("Paradigmen", new PointTableViewCell("Paradigmen", "90.341", true, "2_1_Paradigmen"));
+        javaResults.put("Exception Handling", new PointTableViewCell("Exception Handling", "100.0", false));
+        javaResults.put("Std Lib & 3rd Party", new PointTableViewCell("Std Lib & 3rd Party", "74.727", true, "2_2_StdLib"));
+        javaResults.put("Modularisierung", new PointTableViewCell("Modularisierung", "100.0", false));
+        javaResults.put("Integration von System libs (C, C++)", new PointTableViewCell("Integration von System libs (C, C++)", "70.0", false));
+        javaResults.put("Integration mit anderen Programiersprachen", new PointTableViewCell("Integration mit anderen Programiersprachen", "50.0", false));
+        javaResults.put("Lernkurve", new PointTableViewCell("Lernkurve", "60.0", false));
+        javaResults.put("Summe", new PointTableViewCell("Summe", "83.124", false));
+
+        Map<String, PointTableViewCell> goResults = new HashMap<>();
+        goResults.put("Sprachen", new PointTableViewCell("Sprachen", "Go", false));
+        goResults.put("Paradigmen", new PointTableViewCell("Paradigmen", "67.196", true, "2_1_Paradigmen"));
+        goResults.put("Exception Handling", new PointTableViewCell("Exception Handling", "100.0", false));
+        goResults.put("Std Lib & 3rd Party", new PointTableViewCell("Std Lib & 3rd Party", "82.644", true, "2_2_StdLib"));
+        goResults.put("Modularisierung", new PointTableViewCell("Modularisierung", "100.0", false));
+        goResults.put("Integration von System libs (C, C++)", new PointTableViewCell("Integration von System libs (C, C++)", "100.0", false));
+        goResults.put("Integration mit anderen Programiersprachen", new PointTableViewCell("Integration mit anderen Programiersprachen", "100.0", false));
+        goResults.put("Lernkurve", new PointTableViewCell("Lernkurve", "100.0", false));
+        goResults.put("Summe", new PointTableViewCell("Summe", "92.475", false));
+
+        Map<String, PointTableViewCell> rustResults = new HashMap<>();
+        rustResults.put("Sprachen", new PointTableViewCell("Sprachen", "Rust", false));
+        rustResults.put("Paradigmen", new PointTableViewCell("Paradigmen", "90.341", true, "2_1_Paradigmen"));
+        rustResults.put("Exception Handling", new PointTableViewCell("Exception Handling", "100.0", false));
+        rustResults.put("Std Lib & 3rd Party", new PointTableViewCell("Std Lib & 3rd Party", "82.644", true, "2_2_StdLib"));
+        rustResults.put("Modularisierung", new PointTableViewCell("Modularisierung", "100.0", false));
+        rustResults.put("Integration von System libs (C, C++)", new PointTableViewCell("Integration von System libs (C, C++)", "100.0", false));
+        rustResults.put("Integration mit anderen Programiersprachen", new PointTableViewCell("Integration mit anderen Programiersprachen", "100.0", false));
+        rustResults.put("Lernkurve", new PointTableViewCell("Lernkurve", "30.0", false));
+        rustResults.put("Summe", new PointTableViewCell("Summe", "91.133", false));
+
+        Map<String, PointTableViewCell> cppResults = new HashMap<>();
+        cppResults.put("Sprachen", new PointTableViewCell("Sprachen", "C++", false));
+        cppResults.put("Paradigmen", new PointTableViewCell("Paradigmen", "92.273", true, "2_1_Paradigmen"));
+        cppResults.put("Exception Handling", new PointTableViewCell("Exception Handling", "100.0", false));
+        cppResults.put("Std Lib & 3rd Party", new PointTableViewCell("Std Lib & 3rd Party", "68.616", true, "2_2_StdLib"));
+        cppResults.put("Modularisierung", new PointTableViewCell("Modularisierung", "100.0", false));
+        cppResults.put("Integration von System libs (C, C++)", new PointTableViewCell("Integration von System libs (C, C++)", "100.0", false));
+        cppResults.put("Integration mit anderen Programiersprachen", new PointTableViewCell("Integration mit anderen Programiersprachen", "100.0", false));
+        cppResults.put("Lernkurve", new PointTableViewCell("Lernkurve", "20.0", false));
+        cppResults.put("Summe", new PointTableViewCell("Summe", "87.670", false));
+
+        Map<String, PointTableViewCell> pythonResults = new HashMap<>();
+        pythonResults.put("Sprachen", new PointTableViewCell("Sprachen", "Python", false));
+        pythonResults.put("Paradigmen", new PointTableViewCell("Paradigmen", "63.332", true, "2_1_Paradigmen"));
+        pythonResults.put("Exception Handling", new PointTableViewCell("Exception Handling", "100.0", false));
+        pythonResults.put("Std Lib & 3rd Party", new PointTableViewCell("Std Lib & 3rd Party", "77.969", true, "2_2_StdLib"));
+        pythonResults.put("Modularisierung", new PointTableViewCell("Modularisierung", "70.0", false));
+        pythonResults.put("Integration von System libs (C, C++)", new PointTableViewCell("Integration von System libs (C, C++)", "80.0", false));
+        pythonResults.put("Integration mit anderen Programiersprachen", new PointTableViewCell("Integration mit anderen Programiersprachen", "0.0", false));
+        pythonResults.put("Lernkurve", new PointTableViewCell("Lernkurve", "50.0", false));
+        pythonResults.put("Summe", new PointTableViewCell("Summe", "70.559", false));
+
+        rows.add(javaResults);
+        rows.add(goResults);
+        rows.add(rustResults);
+        rows.add(cppResults);
+        rows.add(pythonResults);
+        return new PointTableViewFlat("2_Programmiersprache", headers, rows);
     }
 }
