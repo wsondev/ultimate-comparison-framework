@@ -1,17 +1,5 @@
 package wrapper;
 
-import java.io.IOException;
-import java.nio.file.Files;
-import java.nio.file.Path;
-import java.nio.file.Paths;
-import java.util.Collections;
-import java.util.List;
-import java.util.Map;
-import java.util.Objects;
-import java.util.function.Predicate;
-import java.util.stream.Collectors;
-import java.util.stream.Stream;
-
 import com.google.gson.Gson;
 import com.google.gson.GsonBuilder;
 import com.google.gson.JsonPrimitive;
@@ -23,18 +11,23 @@ import com.vladsch.flexmark.parser.Parser;
 import com.vladsch.flexmark.util.options.MutableDataSet;
 import json.converter.JsonConverterExtension;
 import json.converter.internal.JsonConverterNodeRenderer;
-import org.apache.commons.cli.CommandLine;
-import org.apache.commons.cli.CommandLineParser;
-import org.apache.commons.cli.DefaultParser;
-import org.apache.commons.cli.Option;
-import org.apache.commons.cli.Options;
-import org.apache.commons.cli.ParseException;
+import org.apache.commons.cli.*;
 import org.eclipse.collections.impl.factory.Maps;
 import org.tinylog.Logger;
-import xlsx.converter.PointTableView;
 import xlsx.converter.PointTableViewFlat;
-import xlsx.reader.ReaderUtil;
 import xlsx.reader.ReaderUtilFlat;
+
+import java.io.IOException;
+import java.nio.file.Files;
+import java.nio.file.Path;
+import java.nio.file.Paths;
+import java.util.Collections;
+import java.util.List;
+import java.util.Map;
+import java.util.Objects;
+import java.util.function.Predicate;
+import java.util.stream.Collectors;
+import java.util.stream.Stream;
 
 public class Converter {
 
@@ -169,27 +162,19 @@ public class Converter {
                 .collect(Collectors.toList());
             writeFile(output, gson.toJson(collect, List.class));
 
-            List<PointTableView> ptv = getFiles(input, p -> p.toString().endsWith(".xlsx"))
-                .map(ReaderUtil.create())
-                .flatMap(List::stream)
-                .collect(Collectors.toList());
-            if (ptv.size() > 0) {
-                writeFile(output.getParent().resolve(Path.of("platform-comparison.json")), gson.toJson(ptv));
-            }
-
             List<PointTableViewFlat> ptvf = getFiles(input, p -> p.toString().endsWith(".xlsx"))
                 .map(ReaderUtilFlat.create())
                 .flatMap(List::stream)
                 .collect(Collectors.toList());
-            if (ptv.size() > 0) {
-                writeFile(output.getParent().resolve(Path.of("platform-comparison-flat.json")), gson.toJson(ptvf));
+            if (ptvf.size() > 0) {
+                writeFile(output.getParent().resolve(Path.of("platform-comparison.json")), gson.toJson(ptvf));
             }
         } else {
             if (input.toString().endsWith(".md")) {
                 convert(input, output);
             } else if (input.toString().endsWith(".xlsx")) {
                 writeFile(output.getParent().resolve(Path.of("platform-comparison.json")),
-                    gson.toJson(ReaderUtil.create().apply(input)));
+                    gson.toJson(ReaderUtilFlat.create().apply(input)));
             } else {
                 throw new RuntimeException("File ending is not recognized.");
             }

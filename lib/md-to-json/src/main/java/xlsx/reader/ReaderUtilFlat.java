@@ -7,7 +7,6 @@ import xlsx.converter.PointTableViewFlat;
 
 import java.io.IOException;
 import java.nio.file.Path;
-import java.text.DecimalFormat;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.function.Function;
@@ -16,8 +15,6 @@ import static xlsx.reader.ReaderUtil.collectLanguages;
 import static xlsx.reader.ReaderUtil.readTable;
 
 public final class ReaderUtilFlat implements Function<Path, List<PointTableViewFlat>> {
-
-    private static final DecimalFormat decimalFormat = new DecimalFormat("###.###");
 
     private final Function<PointTable, PointTableViewFlat> tableMapper = new PointTableToViewFlatMapper();
 
