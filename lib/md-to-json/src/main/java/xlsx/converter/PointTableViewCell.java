@@ -15,7 +15,9 @@ public final class PointTableViewCell {
 
     private final String value;
 
+    @Getter
     private final Boolean hasSubTable;
 
+    @Getter
     private String subTableName;
 }
