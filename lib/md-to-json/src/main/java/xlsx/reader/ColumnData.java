@@ -7,18 +7,20 @@ import lombok.Setter;
 
 @RequiredArgsConstructor
 @EqualsAndHashCode(onlyExplicitlyIncluded = true)
+@Getter
 public class ColumnData implements Comparable<ColumnData> {
 
     @EqualsAndHashCode.Include
-    @Getter
     private final String label;
 
     @EqualsAndHashCode.Include
-    @Getter
     private final Type type;
 
     @Setter
     private String referencingSheetName;
+
+    @Setter
+    private String comment;
 
     public String getReferencingSheetName() {
         if (!isReference()) {

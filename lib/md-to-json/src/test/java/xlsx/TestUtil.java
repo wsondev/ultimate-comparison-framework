@@ -205,9 +205,9 @@ public abstract class TestUtil {
 
         List<PointTableViewCell> javaResults = new ArrayList<>();
         javaResults.add(new PointTableViewCell("Sprachen", "Java", false));
-        javaResults.add(new PointTableViewCell("Paradigmen", "90.341", true, "2_1_Paradigmen"));
+        javaResults.add(new PointTableViewCell("Paradigmen", "90.341", true, "2_1_Paradigmen", null));
         javaResults.add(new PointTableViewCell("Exception Handling", "100.0", false));
-        javaResults.add(new PointTableViewCell("Std Lib & 3rd Party", "74.727", true, "2_2_StdLib"));
+        javaResults.add(new PointTableViewCell("Std Lib & 3rd Party", "74.727", true, "2_2_StdLib", null));
         javaResults.add(new PointTableViewCell("Modularisierung", "100.0", false));
         javaResults.add(new PointTableViewCell("Integration von System libs (C, C++)", "70.0", false));
         javaResults.add(new PointTableViewCell("Integration mit anderen Programiersprachen", "50.0", false));
@@ -216,9 +216,9 @@ public abstract class TestUtil {
 
         List<PointTableViewCell> goResults = new ArrayList<>();
         goResults.add(new PointTableViewCell("Sprachen", "Go", false));
-        goResults.add(new PointTableViewCell("Paradigmen", "67.196", true, "2_1_Paradigmen"));
+        goResults.add(new PointTableViewCell("Paradigmen", "67.196", true, "2_1_Paradigmen", null));
         goResults.add(new PointTableViewCell("Exception Handling", "100.0", false));
-        goResults.add(new PointTableViewCell("Std Lib & 3rd Party", "82.644", true, "2_2_StdLib"));
+        goResults.add(new PointTableViewCell("Std Lib & 3rd Party", "82.644", true, "2_2_StdLib", null));
         goResults.add(new PointTableViewCell("Modularisierung", "100.0", false));
         goResults.add(new PointTableViewCell("Integration von System libs (C, C++)", "100.0", false));
         goResults.add(new PointTableViewCell("Integration mit anderen Programiersprachen", "100.0", false));
@@ -227,9 +227,9 @@ public abstract class TestUtil {
 
         List<PointTableViewCell> rustResults = new ArrayList<>();
         rustResults.add(new PointTableViewCell("Sprachen", "Rust", false));
-        rustResults.add(new PointTableViewCell("Paradigmen", "90.341", true, "2_1_Paradigmen"));
+        rustResults.add(new PointTableViewCell("Paradigmen", "90.341", true, "2_1_Paradigmen", null));
         rustResults.add(new PointTableViewCell("Exception Handling", "100.0", false));
-        rustResults.add(new PointTableViewCell("Std Lib & 3rd Party", "82.644", true, "2_2_StdLib"));
+        rustResults.add(new PointTableViewCell("Std Lib & 3rd Party", "82.644", true, "2_2_StdLib", null));
         rustResults.add(new PointTableViewCell("Modularisierung", "100.0", false));
         rustResults.add(new PointTableViewCell("Integration von System libs (C, C++)", "100.0", false));
         rustResults.add(new PointTableViewCell("Integration mit anderen Programiersprachen", "100.0", false));
@@ -238,9 +238,9 @@ public abstract class TestUtil {
 
         List<PointTableViewCell> cppResults = new ArrayList<>();
         cppResults.add(new PointTableViewCell("Sprachen", "C++", false));
-        cppResults.add(new PointTableViewCell("Paradigmen", "92.273", true, "2_1_Paradigmen"));
+        cppResults.add(new PointTableViewCell("Paradigmen", "92.273", true, "2_1_Paradigmen", null));
         cppResults.add(new PointTableViewCell("Exception Handling", "100.0", false));
-        cppResults.add(new PointTableViewCell("Std Lib & 3rd Party", "68.616", true, "2_2_StdLib"));
+        cppResults.add(new PointTableViewCell("Std Lib & 3rd Party", "68.616", true, "2_2_StdLib", null));
         cppResults.add(new PointTableViewCell("Modularisierung", "100.0", false));
         cppResults.add(new PointTableViewCell("Integration von System libs (C, C++)", "100.0", false));
         cppResults.add(new PointTableViewCell("Integration mit anderen Programiersprachen", "100.0", false));
@@ -249,9 +249,9 @@ public abstract class TestUtil {
 
         List<PointTableViewCell> pythonResults = new ArrayList<>();
         pythonResults.add(new PointTableViewCell("Sprachen", "Python", false));
-        pythonResults.add(new PointTableViewCell("Paradigmen", "63.332", true, "2_1_Paradigmen"));
+        pythonResults.add(new PointTableViewCell("Paradigmen", "63.332", true, "2_1_Paradigmen", null));
         pythonResults.add(new PointTableViewCell("Exception Handling", "100.0", false));
-        pythonResults.add(new PointTableViewCell("Std Lib & 3rd Party", "77.969", true, "2_2_StdLib"));
+        pythonResults.add(new PointTableViewCell("Std Lib & 3rd Party", "77.969", true, "2_2_StdLib", null));
         pythonResults.add(new PointTableViewCell("Modularisierung", "70.0", false));
         pythonResults.add(new PointTableViewCell("Integration von System libs (C, C++)", "80.0", false));
         pythonResults.add(new PointTableViewCell("Integration mit anderen Programiersprachen", "0.0", false));
@@ -274,20 +274,20 @@ public abstract class TestUtil {
 
         Map<String, PointTableViewCell> javaResults = new HashMap<>();
         javaResults.put("Sprachen", new PointTableViewCell("Sprachen", "Java", false));
-        javaResults.put("Paradigmen", new PointTableViewCell("Paradigmen", "90.341", true, "2_1_Paradigmen"));
+        javaResults.put("Paradigmen", new PointTableViewCell("Paradigmen", "90.341", true, "2_1_Paradigmen", null));
         javaResults.put("Exception Handling", new PointTableViewCell("Exception Handling", "100.0", false));
-        javaResults.put("Std Lib & 3rd Party", new PointTableViewCell("Std Lib & 3rd Party", "74.727", true, "2_2_StdLib"));
+        javaResults.put("Std Lib & 3rd Party", new PointTableViewCell("Std Lib & 3rd Party", "74.727", true, "2_2_StdLib", null));
         javaResults.put("Modularisierung", new PointTableViewCell("Modularisierung", "100.0", false));
-        javaResults.put("Integration von System libs (C, C++)", new PointTableViewCell("Integration von System libs (C, C++)", "70.0", false));
+        javaResults.put("Integration von System libs (C, C++)", new PointTableViewCell("Integration von System libs (C, C++)", "70.0", false, null, null));
         javaResults.put("Integration mit anderen Programiersprachen", new PointTableViewCell("Integration mit anderen Programiersprachen", "50.0", false));
         javaResults.put("Lernkurve", new PointTableViewCell("Lernkurve", "60.0", false));
         javaResults.put("Summe", new PointTableViewCell("Summe", "83.124", false));
 
         Map<String, PointTableViewCell> goResults = new HashMap<>();
         goResults.put("Sprachen", new PointTableViewCell("Sprachen", "Go", false));
-        goResults.put("Paradigmen", new PointTableViewCell("Paradigmen", "67.196", true, "2_1_Paradigmen"));
+        goResults.put("Paradigmen", new PointTableViewCell("Paradigmen", "67.196", true, "2_1_Paradigmen", null));
         goResults.put("Exception Handling", new PointTableViewCell("Exception Handling", "100.0", false));
-        goResults.put("Std Lib & 3rd Party", new PointTableViewCell("Std Lib & 3rd Party", "82.644", true, "2_2_StdLib"));
+        goResults.put("Std Lib & 3rd Party", new PointTableViewCell("Std Lib & 3rd Party", "82.644", true, "2_2_StdLib", null));
         goResults.put("Modularisierung", new PointTableViewCell("Modularisierung", "100.0", false));
         goResults.put("Integration von System libs (C, C++)", new PointTableViewCell("Integration von System libs (C, C++)", "100.0", false));
         goResults.put("Integration mit anderen Programiersprachen", new PointTableViewCell("Integration mit anderen Programiersprachen", "100.0", false));
@@ -296,9 +296,9 @@ public abstract class TestUtil {
 
         Map<String, PointTableViewCell> rustResults = new HashMap<>();
         rustResults.put("Sprachen", new PointTableViewCell("Sprachen", "Rust", false));
-        rustResults.put("Paradigmen", new PointTableViewCell("Paradigmen", "90.341", true, "2_1_Paradigmen"));
+        rustResults.put("Paradigmen", new PointTableViewCell("Paradigmen", "90.341", true, "2_1_Paradigmen", null));
         rustResults.put("Exception Handling", new PointTableViewCell("Exception Handling", "100.0", false));
-        rustResults.put("Std Lib & 3rd Party", new PointTableViewCell("Std Lib & 3rd Party", "82.644", true, "2_2_StdLib"));
+        rustResults.put("Std Lib & 3rd Party", new PointTableViewCell("Std Lib & 3rd Party", "82.644", true, "2_2_StdLib", null));
         rustResults.put("Modularisierung", new PointTableViewCell("Modularisierung", "100.0", false));
         rustResults.put("Integration von System libs (C, C++)", new PointTableViewCell("Integration von System libs (C, C++)", "100.0", false));
         rustResults.put("Integration mit anderen Programiersprachen", new PointTableViewCell("Integration mit anderen Programiersprachen", "100.0", false));
@@ -307,9 +307,9 @@ public abstract class TestUtil {
 
         Map<String, PointTableViewCell> cppResults = new HashMap<>();
         cppResults.put("Sprachen", new PointTableViewCell("Sprachen", "C++", false));
-        cppResults.put("Paradigmen", new PointTableViewCell("Paradigmen", "92.273", true, "2_1_Paradigmen"));
+        cppResults.put("Paradigmen", new PointTableViewCell("Paradigmen", "92.273", true, "2_1_Paradigmen", null));
         cppResults.put("Exception Handling", new PointTableViewCell("Exception Handling", "100.0", false));
-        cppResults.put("Std Lib & 3rd Party", new PointTableViewCell("Std Lib & 3rd Party", "68.616", true, "2_2_StdLib"));
+        cppResults.put("Std Lib & 3rd Party", new PointTableViewCell("Std Lib & 3rd Party", "68.616", true, "2_2_StdLib", null));
         cppResults.put("Modularisierung", new PointTableViewCell("Modularisierung", "100.0", false));
         cppResults.put("Integration von System libs (C, C++)", new PointTableViewCell("Integration von System libs (C, C++)", "100.0", false));
         cppResults.put("Integration mit anderen Programiersprachen", new PointTableViewCell("Integration mit anderen Programiersprachen", "100.0", false));
@@ -318,9 +318,9 @@ public abstract class TestUtil {
 
         Map<String, PointTableViewCell> pythonResults = new HashMap<>();
         pythonResults.put("Sprachen", new PointTableViewCell("Sprachen", "Python", false));
-        pythonResults.put("Paradigmen", new PointTableViewCell("Paradigmen", "63.332", true, "2_1_Paradigmen"));
+        pythonResults.put("Paradigmen", new PointTableViewCell("Paradigmen", "63.332", true, "2_1_Paradigmen", null));
         pythonResults.put("Exception Handling", new PointTableViewCell("Exception Handling", "100.0", false));
-        pythonResults.put("Std Lib & 3rd Party", new PointTableViewCell("Std Lib & 3rd Party", "77.969", true, "2_2_StdLib"));
+        pythonResults.put("Std Lib & 3rd Party", new PointTableViewCell("Std Lib & 3rd Party", "77.969", true, "2_2_StdLib", null));
         pythonResults.put("Modularisierung", new PointTableViewCell("Modularisierung", "70.0", false));
         pythonResults.put("Integration von System libs (C, C++)", new PointTableViewCell("Integration von System libs (C, C++)", "80.0", false));
         pythonResults.put("Integration mit anderen Programiersprachen", new PointTableViewCell("Integration mit anderen Programiersprachen", "0.0", false));

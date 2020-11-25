@@ -146,6 +146,7 @@ public final class ReaderUtil implements Function<Path, List<PointTableView>> {
                 if (cd.isReference()) {
                     cd.setReferencingSheetName(extractWorksheetName(cell));
                 }
+                cd.setComment(cell.getCellComment() != null ? cell.getCellComment().getString().toString() : null);
                 languageResults.add(new CellData(cd, extractPointsFromCell(cell)));
                 if (columnAdded) {
                     columns.add(cd);

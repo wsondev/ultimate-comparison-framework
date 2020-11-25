@@ -10,6 +10,7 @@ public final class CellDataToPointTableViewCellMapper implements Function<CellDa
         return new PointTableViewCell(cellData.getColumn().getLabel(),
             cellData.getValue(),
             cellData.getColumn().isReference(),
-            cellData.getColumn().isReference() ? cellData.getColumn().getReferencingSheetName() : null);
+            cellData.getColumn().isReference() ? cellData.getColumn().getReferencingSheetName() : null,
+            cellData.getColumn().getComment());
     }
 }
