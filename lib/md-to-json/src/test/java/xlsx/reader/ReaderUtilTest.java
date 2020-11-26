@@ -7,6 +7,7 @@ import xlsx.TestUtil;
 import java.util.List;
 
 import static org.junit.jupiter.api.Assertions.*;
+import static xlsx.reader.ReaderUtil.authorPattern;
 
 public class ReaderUtilTest extends TestUtil {
 
@@ -58,5 +59,12 @@ public class ReaderUtilTest extends TestUtil {
         PointTable expected = expectedPointTableForSheetAtIndexTwo();
         PointTable result = ReaderUtil.readTable(this.wb.getSheetAt(2), ReaderUtil.collectLanguages(this.wb.getSheetAt(0)));
         assertEquals(expected, result);
+    }
+
+    @Test
+    public void removeAuthorNameFromText() {
+        String input = "Surename, Name: Hello world!";
+        String expected = "Hello world!";
+        assertEquals(expected, input.replaceAll(authorPattern, ""));
     }
 }

@@ -16,6 +16,8 @@ public final class ReaderUtil implements Function<Path, List<PointTableView>> {
 
     private final Function<PointTable, PointTableView> tableMapper = new PointTableToViewMapper();
 
+    public static final String authorPattern = "^\\w+,\\s\\w+:\\s";
+
     private ReaderUtil() {
     }
 
@@ -146,7 +148,7 @@ public final class ReaderUtil implements Function<Path, List<PointTableView>> {
                 if (cd.isReference()) {
                     cd.setReferencingSheetName(extractWorksheetName(cell));
                 }
-                cd.setComment(cell.getCellComment() != null ? cell.getCellComment().getString().toString() : null);
+                cd.setComment(cell.getCellComment() != null ? cell.getCellComment().getString().toString().replaceAll(authorPattern, "") : null);
                 languageResults.add(new CellData(cd, extractPointsFromCell(cell)));
                 if (columnAdded) {
                     columns.add(cd);
